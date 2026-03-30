@@ -1,0 +1,59 @@
+@charset "UTF-8";
+/* scss/theme.scss */
+/* 1) 포인트 컬러 변수(기본=kk) */
+:root {
+  --c-point: #036635;
+}
+
+/* 2) 매체별 컬러 오버라이드 */
+.media-kk {
+  --c-point: #036635;
+}
+
+.media-sk {
+  --c-point: #e93828;
+}
+
+.media-kb {
+  --c-point: #ffcc01;
+}
+
+
+.media-wo{ --c-point: #2589F4; }
+
+
+
+/* style.css 쪽 */
+.plus-hero__chip {
+  background: var(--c-point);
+}
+
+.plus-card__plus,
+.plus-card__value {
+  color: var(--c-point);
+}
+
+.point-banner__text {
+  color: var(--c-point);
+}
+
+/* style-shop.css / style-guide.css 공통으로 잡힐 수 있음 */
+.shop-top__rate {
+  color: var(--c-point);
+}
+
+.howto__badge {
+  color: var(--c-point);
+}
+
+.floating-cta__btn {
+  background: var(--c-point);
+}
+
+/* history 쪽(earned) */
+.history-item--earned .history-item__sign,
+.history-item--earned .history-item__value,
+.history-item--earned .history-item__unit,
+.history-item--earned .history-item__state {
+  color: var(--c-point);
+}/*# sourceMappingURL=theme.css.map */

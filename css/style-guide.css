@@ -1,0 +1,357 @@
+/* =========================================================
+   Header Nav
+========================================================= */
+.nav {
+  background: var(--slate-100, #ffffff);
+  border-bottom: 0.0625rem solid var(--gray-200, transparent);
+  padding: 1rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav__list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__left,
+.nav__center,
+.nav__right {
+  display: flex;
+  align-items: center;
+}
+
+/* 좌/우 영역 폭을 동일하게 만들어 타이틀을 '진짜 중앙'에 고정 */
+.nav__left,
+.nav__right {
+  width: 1.5rem;
+  flex: 0 0 1.5rem;
+}
+
+.nav__back {
+  width: 1.5rem;      /* 24px */
+  height: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.nav__icon {
+  width: 1.125rem;    /* 18px */
+  height: 1.125rem;
+  display: block;
+}
+
+.nav__center {
+  flex: 1 1 auto;
+  justify-content: center;
+  min-width: 0;
+}
+
+.nav__title {
+  color: var(--gray-900, #181d27);
+  text-align: center;
+  font-family: var(--pretendard-h1-b-font-family, "Pretendard-Bold", sans-serif);
+  font-size: var(--pretendard-h1-b-font-size, 1rem);
+  line-height: var(--pretendard-h1-b-line-height, 1.5rem);
+  letter-spacing: var(--pretendard-h1-b-letter-spacing, -0.01875rem);
+  font-weight: var(--pretendard-h1-b-font-weight, 700);
+
+  /* 길어질 때 안전장치 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nav__spacer {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+}
+
+
+
+
+/* =========================================================
+  메인 타이틀
+========================================================= */
+
+/* .guide-hero{
+  background: var(--slate-100, #f1f5f9);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4375rem; 
+}
+
+.guide-hero__line{
+  margin: 0;
+  color: var(--gray-900, #181d27);
+  font-family: "Pretendard-SemiBold", sans-serif;
+  font-size: 1.125rem;   
+  line-height: 1.3125rem;
+  font-weight: 600;
+}
+
+.guide-hero__accent{
+  color: #036635;
+  font-weight: 600; 
+} */
+
+/* =========================================================
+  상세 타이틀
+========================================================= */
+
+/* .guide-q{
+  padding: 2rem 1rem 0rem;
+}
+
+.guide-q__title{
+  margin: 0 0 1rem;
+  color: var(--gray-900, #181d27);
+  font-family: "Pretendard-SemiBold", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
+  font-weight: 600;
+}
+
+
+.guide-q__images{
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+
+.guide-q__img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1rem; 
+  margin-bottom: 1rem;
+} */
+
+/* =========================================================
+   하단 cta 버튼
+========================================================= */
+
+/* 버튼 높이/여백 토큰 */
+:root{
+  --floating-cta-h: 56px;     /* 3.5rem */
+  --floating-cta-pad: 16px;
+}
+.floating-cta{
+  position: sticky;
+  bottom: 0;
+  z-index: 99;
+  margin: 0;
+  padding: 1rem;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.floating-cta__btn{
+display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 80%;
+  height: var(--floating-cta-h);
+  margin: 0 auto;
+  border-radius: 0.75rem;
+  background: #036635;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+/* 텍스트 */
+.floating-cta__text{
+  margin: 0;
+  color: #fcf7e4;
+  font-family: "PretendardVariable-SemiBold", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  max-width: 90%;
+}
+
+/* 앞 타겟(쿠팡…) 말줄임 */
+.floating-cta__target{
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 7.75rem;
+  margin-right: 0.3rem;
+}
+
+
+
+
+
+
+/* =========================================================
+   Footer Notice (알려드려요)
+========================================================= */
+.footer-notice{
+  background: var(--slate-100, #f1f5f9);
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding: 1rem;    
+}
+
+.footer-notice__title{
+  margin: 0;
+  padding: 0 0 0.625rem;     /* 10px */
+  color: var(--gray-700, #414651);
+  font-family: "Pretendard-Bold", sans-serif;
+  font-size: 0.875rem;       /* 14px */
+  line-height: 1.25rem;      /* 20px */
+  font-weight: 700;
+}
+
+.footer-notice__list{
+  margin: 0;
+  padding-left: 1rem;        /* 기본 bullet 들여쓰기 */
+  color: var(--gray-500, #717680);
+  font-family: "Pretendard-Regular", sans-serif;
+  font-size: 0.75rem;        /* 12px */
+  line-height: 1.25rem;      /* 20px */
+  letter-spacing: -0.02em;
+  list-style: disc;         /* ✅ 불릿 다시 켜기 */
+  padding-left: 1rem;       /* ✅ 불릿이 보이게 들여쓰기 */
+  margin: 0;
+}
+
+.footer-notice__list li{
+  margin: 0.25rem 0;         /* 항목 간 간격 */
+  list-style: disc;
+}
+
+/* =========================================================
+   Footer
+========================================================= */
+.footer-sign {
+  padding: 1rem 1.25rem;
+  background: #f1f5f9;
+  
+}
+
+.footer-sign__row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.footer-sign__brand {
+  margin: 0;
+  flex: 1;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+  color: #333333;
+}
+
+.footer-sign__copy {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  color: #999999;
+}
+
+.footer-sign__links {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.footer-sign__links a {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+  color: #333333;
+  text-decoration: none;
+}
+
+/* =========================
+   Footer v2 (addon only)
+   - 기존 v1 CSS 유지
+========================= */
+.footer-sign.footer-sign--v2 .footer-sign__links{
+  justify-content: space-between; /* 좌: 이용문의 / 우: 약관 */
+  align-items: center;
+}
+
+/* 약관 링크 그룹 */
+.footer-sign.footer-sign--v2 .footer-sign__policies{
+  display: flex;
+  gap: 0.4375rem;
+  align-items: center;
+}
+
+/* 약관 링크 스타일(회색) */
+.footer-sign.footer-sign--v2 .footer-sign__policy{
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  color: #666666;
+  text-decoration: none;
+}
+
+/* 개인정보처리방침만 강조 */
+.footer-sign.footer-sign--v2 .footer-sign__policy--strong{
+  font-weight: 700;
+}
+
+/* (선택) 너무 좁을 때 줄바꿈 자연스럽게 */
+.footer-sign.footer-sign--v2 .footer-sign__links{
+  flex-wrap: wrap;
+  row-gap: 0.5rem;
+}
+
+
+
+
+
+/* =========================================================
+   Desktop preview only
+========================================================= */
+@media (min-width: 580px){
+  #index {
+    
+  }
+
+ .wrap{
+    width: 28.75rem;
+    margin: 0 auto;
+    height: auto;          
+    overflow: visible;     
+  }
+
+  .footer-sign {
+    width: 28.75rem;
+    margin: 0 auto;
+  }
+
+  .floating-cta{
+    
+    width: 28.75rem;
+
+    
+    box-sizing: border-box;
+  }
+
+}
+
+/* =========================================================
+   Short screen overrides removed to prevent jumping on scroll
+========================================================= */

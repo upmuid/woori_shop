@@ -1,0 +1,867 @@
+/* =========================================================
+   Header Nav
+========================================================= */
+.nav {
+  background: var(--slate-100, #fff);
+  border-bottom: 0.0625rem solid var(--gray-200, transparent);
+  padding: 1rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav__list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__left,
+.nav__center,
+.nav__right {
+  display: flex;
+  align-items: center;
+}
+
+/* 좌/우 영역 폭을 동일하게 만들어 타이틀을 '진짜 중앙'에 고정 */
+.nav__left,
+.nav__right {
+  width: 1.5rem;
+  flex: 0 0 1.5rem;
+}
+
+.nav__back {
+  width: 1.5rem;      /* 24px */
+  height: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.nav__icon {
+  width: 1.125rem;    /* 18px */
+  height: 1.125rem;
+  display: block;
+}
+
+.nav__center {
+  flex: 1 1 auto;
+  justify-content: center;
+  min-width: 0;
+}
+
+.nav__title {
+  color: var(--gray-900, #181d27);
+  text-align: center;
+  font-family: var(--pretendard-h1-b-font-family, "Pretendard-Bold", sans-serif);
+  font-size: var(--pretendard-h1-b-font-size, 1rem);
+  line-height: var(--pretendard-h1-b-line-height, 1.5rem);
+  letter-spacing: var(--pretendard-h1-b-letter-spacing, -0.01875rem);
+  font-weight: var(--pretendard-h1-b-font-weight, 700);
+
+  /* 길어질 때 안전장치 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nav__spacer {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+}
+
+
+.shop-top{
+  position: relative;
+}
+
+.info{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.2rem;
+
+  padding: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.info img{
+  width: 0.875rem;
+  height: 0.875rem;
+  display: block;
+  filter: brightness(0) saturate(100%) invert(71%) sepia(6%) saturate(220%) hue-rotate(182deg) brightness(92%) contrast(90%);
+}
+
+.info span{
+  color: var(--gray-400, #a4a7ae); /* ✅ $g-3 대체값 필요 */
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+/* =========================================================
+   Shop Top (nav 아래 타이틀/적립율)
+========================================================= */
+.shop-top {
+  padding: 1rem;
+}
+
+.shop-top__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.shop-top__mall {
+  margin: 0;
+  color: #000;
+  font-family: "PretendardVariable-SemiBold", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  /* ✅ 너비 제한 및 줄바꿈 설정 */
+  max-width: 60%;            /* 너비를 60%로 제한 */
+  line-height: 1.3;          /* 두 줄이 되었을 때 보기 좋게 줄간격 조정 (기존 2.625rem은 너무 넓음) */
+  word-break: keep-all;      /* 한글 단어가 중간에 끊기지 않게 함 (취향에 따라 생략 가능) */
+  overflow-wrap: break-word; /* 너무 긴 영문 등이 있을 경우 대비 */
+}
+
+.shop-top__rate {
+  margin: 0;
+  color: #036635;
+  font-family: "PretendardVariable-SemiBold", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2.625rem;
+  font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   Footer Notice (알려드려요)
+========================================================= */
+.footer-notice{
+  background: var(--slate-100, #f1f5f9);
+  padding: 0 1rem 1rem;      /* footer-sign 위에서 자연스럽게 이어지게 */
+}
+
+.footer-notice__title{
+  margin: 0;
+  padding: 0 0 0.625rem;     /* 10px */
+  color: var(--gray-700, #414651);
+  font-family: "Pretendard-Bold", sans-serif;
+  font-size: 0.875rem;       /* 14px */
+  line-height: 1.25rem;      /* 20px */
+  font-weight: 700;
+}
+
+.footer-notice__list{
+  margin: 0;
+  padding-left: 1rem;        /* 기본 bullet 들여쓰기 */
+  color: var(--gray-500, #717680);
+  font-family: "Pretendard-Regular", sans-serif;
+  font-size: 0.75rem;        /* 12px */
+  line-height: 1.25rem;      /* 20px */
+  letter-spacing: -0.02em;
+  list-style: disc;         /* ✅ 불릿 다시 켜기 */
+  padding-left: 1rem;       /* ✅ 불릿이 보이게 들여쓰기 */
+  margin: 0;
+}
+
+.footer-notice__list li{
+  margin: 0.25rem 0;         /* 항목 간 간격 */
+  list-style: disc;
+}
+
+/* =========================================================
+   Footer
+========================================================= */
+.footer-sign {
+  padding: 1rem 1.25rem;
+  background: #f1f5f9;
+  
+}
+
+.footer-sign__row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.footer-sign__brand {
+  margin: 0;
+  flex: 1;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+  color: #333333;
+}
+
+.footer-sign__copy {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  color: #999999;
+}
+
+.footer-sign__links {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.footer-sign__links a {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+  color: #333333;
+  text-decoration: none;
+}
+
+/* =========================
+   Footer v2 (addon only)
+   - 기존 v1 CSS 유지
+========================= */
+.footer-sign.footer-sign--v2 .footer-sign__links{
+  justify-content: space-between; /* 좌: 이용문의 / 우: 약관 */
+  align-items: center;
+}
+
+/* 약관 링크 그룹 */
+.footer-sign.footer-sign--v2 .footer-sign__policies{
+  display: flex;
+  gap: 0.4375rem;
+  align-items: center;
+}
+
+/* 약관 링크 스타일(회색) */
+.footer-sign.footer-sign--v2 .footer-sign__policy{
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  color: #666666;
+  text-decoration: none;
+}
+
+/* 개인정보처리방침만 강조 */
+.footer-sign.footer-sign--v2 .footer-sign__policy--strong{
+  font-weight: 700;
+}
+
+/* (선택) 너무 좁을 때 줄바꿈 자연스럽게 */
+.footer-sign.footer-sign--v2 .footer-sign__links{
+  flex-wrap: wrap;
+  row-gap: 0.5rem;
+}
+
+/* =========================================================
+   HowTo (캐시 받는 방법) - 수정본
+========================================================= */
+
+.howto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* 타이틀 */
+.howto__head {
+  padding: 1rem 1rem 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.howto__title {
+  margin: 0;
+  color: var(--gray-700, #414651);
+  font-family: "Pretendard-SemiBold", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
+  font-weight: 600;
+}
+
+/* 본문 컨테이너 */
+.howto__body {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* 아이템들을 세로로 쌓음 */
+  gap: 4px; /* 스텝 간 세로 간격 */
+}
+
+/* ✅ 개별 아이템 (숫자 + 텍스트 한 줄) */
+.howto__item {
+  display: flex;
+  gap: 0.75rem;           /* 숫자와 텍스트 사이 간격 */
+  align-items: stretch;    /* 선(line)이 바닥까지 닿도록 설정 */
+}
+
+/* ✅ 왼쪽 숫자 + 라인 영역 */
+.howto__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;         /* 너비 고정 */
+  width: 1.5rem;
+}
+
+/* 배지 스타일 */
+.howto__badge {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;     /* 31.25rem 대신 간단히 50% */
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;         /* 모양 유지 */
+
+  color: #036635;
+  font-family: "Pretendard-SemiBold", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1;
+  font-weight: 600;
+}
+
+/* ✅ 세로 연결선 */
+.howto__line {
+  width: 0.125rem;
+  background: #f1f5f9;
+  flex-grow: 1;           /* 텍스트 높이에 맞춰 자동으로 늘어남 */
+  margin: 0.25rem 0;      /* 숫자와 다음 숫자 사이 적절한 여백 */
+}
+
+/* 마지막 배지 특수 스타일 */
+.howto__badge--done {
+  background: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.howto__check {
+  width: 1.125rem;
+  height: 1.1375rem;
+  display: block;
+}
+
+/* ✅ 오른쪽 텍스트 영역 */
+.howto__content {
+  padding-bottom: 1.25rem; /* 다음 스텝과의 간격 */
+  flex: 1;
+}
+
+/* 마지막 아이템은 아래 여백 제거 */
+.howto__item:last-child .howto__content {
+  padding-bottom: 0;
+}
+
+.howto__item-title {
+  margin: 0 0 0.25rem 0;
+  color: #000;
+  font-family: "PretendardVariable-SemiBold", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+}
+
+.howto__item-desc {
+  margin: 0;
+  color: var(--slate-600, #475569);
+  font-family: "PretendardVariable-Regular", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 400;
+}
+
+.howto__emph {
+  color: var(--slate-800, #1e293b);
+  font-family: "PretendardVariable-Medium", sans-serif;
+  font-weight: 500;
+}
+
+/* =========================================================
+   CTA Block (적립 내역 이동)
+========================================================= */
+.cta-block{
+    width: 100%;
+  padding: 0.625rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+/* 버튼 */
+.cta-block__btn{
+  width: 100%;
+  height: 2.75rem;                /* 44px */
+  background: var(--slate-100, #f1f5f9);
+  border-radius: 0.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+}
+
+.cta-block__btn-text{
+  margin: 0;
+  color: var(--gray-800, #252b37);
+  text-align: center;
+  font-family: "Pretendard-SemiBold", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 600;
+}
+
+/* 안내문 */
+.cta-block__desc{
+  margin: 0;
+  color: var(--gray-700, #414651);
+  font-family: "Pretendard-Regular", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+/* =========================================================
+   추천 상품 (이런 상품은 어떠세요?)
+========================================================= */
+.recommend {
+  background: var(--slate-100, #f1f5f9);
+  padding: 1rem 0 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.recommend__header {
+  padding-right: 1rem;
+}
+
+.recommend__title {
+  color: var(--gray-900, #181d27);
+  font-family: "Pretendard-SemiBold", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.recommend__list-wrap {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.recommend__list-wrap::-webkit-scrollbar {
+  display: none;
+}
+
+.recommend__list {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  min-width: 100%;
+  gap: 0.5rem;
+  padding: 0 1rem 0 0;
+  margin: 0;
+  list-style: none;
+}
+
+.recommend__item {
+  flex: 0 0 6.75rem;
+  width: 6.875rem;
+}
+.recommend__link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.recommend__thumb {
+  background: #fff;
+  border-radius: 0.5rem;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.recommend__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.recommend__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.recommend__name {
+  margin: 0;
+  color: var(--gray-500, #717680);
+  font-family: "Pretendard-Regular", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recommend__price {
+  margin: 0;
+  color: var(--gray-900, #181d27);
+  font-family: "Pretendard-Bold", sans-serif;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+
+.recommend__rocket {
+  width: auto;
+  height: 1rem; /* Adjust logic roughly for a badge */
+  display: block;
+  margin-top: 0.125rem;
+  object-fit: contain;
+  object-position: left;
+}
+
+/* =========================================================
+ 적립 항목 & 적립 불가 항목
+========================================================= */
+
+/* 섹션 래퍼(배경+패딩) */
+.policy{
+  background: var(--slate-100, #f1f5f9);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* 카드 */
+.policy-card{
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+/* 카드 헤더(아이콘+타이틀) */
+.policy-card__head{
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.policy-card__icon{
+  width: 0.875rem;
+  height: 0.875rem;
+  display: block;
+  flex: 0 0 auto;
+}
+
+.policy-card__title{
+  color: var(--gray-900, #181d27);
+  font-family: "Pretendard-SemiBold", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* 리스트 */
+.policy-card__list{
+  margin: 0;
+  padding-left: 1.1rem; /* 불릿 보이게 */
+  color: var(--gray-500, #717680);
+  font-family: "Pretendard-Regular", sans-serif;
+  font-size: var(--txt-s12, 0.75rem);
+  line-height: var(--txt-lh20, 1.25rem);
+  letter-spacing: -0.02em;
+  
+}
+
+.policy-card__list li{
+  list-style: disc;
+ 
+}
+
+/* li 간격 */
+.policy-card__list li + li{
+  margin-top: 0.25rem;
+  
+}
+
+/* =========================================================
+   Policy Notice (유의사항)
+========================================================= */
+.policy-notice{
+  background: var(--slate-100, #f1f5f9);
+  padding: 0 1rem 1rem; /* 위 카드 섹션이랑 자연스럽게 */
+}
+
+/* 유의사항 헤더(타이틀 + 서브카피) */
+.policy-notice__head{
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* 타이틀 */
+.policy-notice__title{
+  margin: 0;
+  color: var(--gray-900, #181d27);
+  font-family: "Pretendard-SemiBold", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  font-weight: 600;
+}
+
+/* 서브 설명 */
+.policy-notice__sub{
+  margin: 0;
+  padding: 4px;
+  color: var(--slate-800, #1e293b);
+  font-family: "Pretendard-Regular", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.3125rem;
+  font-weight: 400;
+}
+
+/* 리스트는 기존 policy-card__list 재사용 */
+/* 불릿 안 보이면(리셋 먹는 경우) 아래를 policy-card__list에 '반드시' 넣어주세요 */
+.policy-card__list{
+  list-style: disc;
+  padding-left: 1.1rem;
+}
+
+/* =========================================================
+   Floating CTA (수정본)
+========================================================= */
+
+ /* 토큰 */
+:root{
+  --cta-h: 56px;                 /* 버튼 높이 */
+  --cta-pad-x: 6px;              /* 좌우 패딩(기존 16px에서 10px 줄임) */
+  --cta-pad-y: 16px;             /* 위/아래 패딩(=1rem) */
+  
+  --cta-bg: #f1f5f9;
+}
+
+/* ✅ sticky: 하단에 붙는 동작만 담당 */
+.floating-cta{
+  position: sticky;
+  bottom: 0;
+  z-index: 99;
+
+  /* footer 영역 톤 + safe-area */
+  padding: var(--cta-pad-y) var(--cta-pad-x)
+           calc(var(--cta-pad-y) + env(safe-area-inset-bottom));
+  background: transparent; /* 배경은 inner::before가 담당 */
+}
+
+/* ✅ 폭/정렬 담당(사파리 안정) */
+.floating-cta__inner{
+  position: relative; /* ::before 기준 */
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+/* ✅ 배경: inner 기준으로 깔아서 460 이상 튀어나가지 않게 */
+.floating-cta__inner::before{
+  content: "";
+  position: absolute;
+  left: calc(-1 * var(--cta-pad-x));
+  right: calc(-1 * var(--cta-pad-x));
+  bottom: calc(-1 * (var(--cta-pad-y) + env(safe-area-inset-bottom)));
+  top: calc(-1 * var(--cta-pad-y));         /* 버튼 위쪽도 1rem 배경 포함 */
+
+  background: var(--cta-bg);
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 0; /* 필요하면 둥글림도 가능 */
+}
+
+/* 버튼 */
+.floating-cta__btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--cta-h);
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  border-radius: 0.75rem;
+  background: #036635;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+/* 텍스트 */
+.floating-cta__text{
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  min-width: 0;
+  max-width: 100%;
+  color: #fcf7e4;
+  font-family: "PretendardVariable-SemiBold", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+}
+
+/* 앞 타겟 말줄임 */
+.floating-cta__target{
+  display: inline-block;
+  min-width: 0;
+  max-width: 11rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 0.3rem;
+}
+
+/* =========================================================
+   Desktop preview only
+========================================================= */
+
+/* 345px ~ 374px */
+@media (max-width: 374px) and (min-width: 345px){
+  .floating-cta__text{
+    font-size: 1rem;
+    line-height: 1.25rem;
+  }
+
+  .floating-cta__target{
+    max-width: 9rem;
+  }
+}
+
+/* 334px ~ 344px */
+@media (max-width: 344px) and (min-width: 334px){
+  .floating-cta__text{
+    font-size: 0.9375rem;
+    line-height: 1.125rem;
+  }
+
+  .floating-cta__target{
+    max-width: 8rem;
+  }
+}
+
+/* 321px ~ 333px */
+@media (max-width: 333px) and (min-width: 321px){
+  .floating-cta__btn{
+    width: 92%;
+    padding: 0 0.75rem;
+    box-sizing: border-box;
+  }
+
+  .floating-cta__text{
+    font-size: 1rem;
+    line-height: 1rem;
+    white-space: nowrap;
+    min-width: 0;
+  }
+
+  .floating-cta__target{
+    max-width: 6.8rem;
+    min-width: 0;
+  }
+}
+
+/* 320px 이하 */
+@media (max-width: 320px){
+  .floating-cta__btn{
+    width: 94%;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+  }
+
+  .floating-cta__text{
+    font-size: 14px;
+    line-height: 1rem;
+    white-space: nowrap;
+    min-width: 0;
+  }
+
+  .floating-cta__target{
+    max-width: 5.8rem;
+    min-width: 0;
+  }
+}
+
+@media (min-width: 580px){
+  #index {
+    /* box-shadow: 0.1875rem 0.25rem 0.6875rem rgba(0, 0, 0, 0.125); */
+    
+  }
+
+  .wrap {
+    width: 28.75rem; /* 460px */
+    margin: 0 auto;
+  }
+
+  .floating-cta__inner{
+    width: var(--cta-maxw);
+  }
+}
+
+/* ✅ 짧은 화면(스크롤 필요한 경우): fixed로 플로팅 */
+@media (max-height: 740px){
+
+  /* fixed일 때 마지막 콘텐츠가 버튼에 가리지 않게 */
+  .content{
+    /* padding-bottom: calc(3.5rem + 2rem + env(safe-area-inset-bottom)); */
+  }
+}

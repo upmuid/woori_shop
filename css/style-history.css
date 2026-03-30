@@ -1,0 +1,940 @@
+/* =========================================================
+   Header Nav
+========================================================= */
+.nav {
+  background: var(--slate-100, #fff);
+  border-bottom: 0.0625rem solid var(--gray-200, transparent);
+  padding: 1rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav__list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__left,
+.nav__center,
+.nav__right {
+  display: flex;
+  align-items: center;
+}
+
+/* 좌/우 영역 폭을 동일하게 만들어 타이틀을 '진짜 중앙'에 고정 */
+.nav__left,
+.nav__right {
+  width: 1.5rem;
+  flex: 0 0 1.5rem;
+}
+
+.nav__back {
+  width: 1.5rem;      /* 24px */
+  height: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.nav__icon {
+  width: 1.125rem;    /* 18px */
+  height: 1.125rem;
+  display: block;
+}
+
+.nav__center {
+  flex: 1 1 auto;
+  justify-content: center;
+  min-width: 0;
+}
+
+.nav__title {
+  color: var(--gray-900, #181d27);
+  text-align: center;
+  font-family: var(--pretendard-h1-b-font-family, "Pretendard-Bold", sans-serif);
+  font-size: var(--pretendard-h1-b-font-size, 1rem);
+  line-height: var(--pretendard-h1-b-line-height, 1.5rem);
+  letter-spacing: var(--pretendard-h1-b-letter-spacing, -0.01875rem);
+  font-weight: var(--pretendard-h1-b-font-weight, 700);
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nav__spacer {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+}
+
+
+/* =========================================================
+   Point Summary (적립 예정 포인트 요약)
+========================================================= */
+.point-summary{
+  padding: 1rem;
+}
+
+.point-summary__card{
+  background: var(--slate-50, #f8fafc);
+  border-radius: 1rem;
+  padding: 1rem;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.point-summary__label{
+  margin: 0;
+  color: var(--gray-800, #252b37);
+  font-family: "Pretendard-SemiBold", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 600;
+}
+
+.point-summary__value{
+  margin: 0;
+  color: var(--slate-800, #1e293b);
+  font-family: "Pretendard-SemiBold", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 600;
+  text-align: right;
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   Month Picker (월 선택 트리거) - 디자인만
+   ✅ sticky/top/z-index는 Layout 블록에서만 관리
+========================================================= */
+.month-picker{
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.month-picker__trigger{
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+.month-picker__ym{
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  justify-content: center;
+  color: var(--gray-800, #252b37);
+  font-family: "Pretendard-SemiBold", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 600;
+}
+
+.month-picker__icon{
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+
+.month-picker__range{
+  margin: 0;
+  color: var(--gray-700, #414651);
+  font-family: "Pretendard-Light", sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  letter-spacing: 0.01em;
+  font-weight: 300;
+  text-align: center;
+}
+
+.month-picker__icon-hit{
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+
+/* =========================================================
+   적립 내역 리스트
+========================================================= */
+.history-list{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.history-item{
+  background: #fff;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.history-item + .history-item{
+  border-top: 0.0625rem solid var(--slate-100, #f1f5f9);
+}
+
+.history-item__date{
+  margin: 0;
+  flex: 0 0 3.25rem;
+  color: var(--gray-800, #252b37);
+  font-family: "Pretendard-Regular", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 400;
+}
+
+.history-item__mid{
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.history-item__merchant{
+  margin: 0;
+  color: var(--gray-800, #252b37);
+  font-family: "Pretendard-Medium", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 500;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.history-item__time{
+  margin: 0;
+  color: var(--gray-700, #414651);
+  font-family: "Pretendard-Light", sans-serif;
+  font-size: 13px;
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 300;
+}
+
+.history-item__right{
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.history-item__amount{
+  margin: 0;
+  display: inline-flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.history-item__state{
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+}
+
+/* 타입별 컬러 */
+.history-item--earned .history-item__sign,
+.history-item--earned .history-item__value,
+.history-item--earned .history-item__unit,
+.history-item--earned .history-item__state{
+  color: #036635;
+  font-family: "Pretendard-Medium", sans-serif;
+  font-weight: 500;
+}
+
+.history-item--earned .history-item__value{
+  font-family: "Pretendard-SemiBold", sans-serif;
+  font-weight: 600;
+}
+
+.history-item--pending .history-item__sign,
+.history-item--pending .history-item__value{
+  color: var(--slate-700, #334155);
+  font-family: "Pretendard-Medium", sans-serif;
+  font-weight: 500;
+}
+
+.history-item--pending .history-item__value{
+  font-family: "Pretendard-SemiBold", sans-serif;
+  font-weight: 600;
+}
+
+.history-item--pending .history-item__unit{
+  color: var(--gray-700, #414651);
+  font-family: "Pretendard-Light", sans-serif;
+  font-weight: 500;
+}
+
+.history-item--pending .history-item__state{
+  color: var(--gray-700, #414651);
+  font-family: "Pretendard-Light", sans-serif;
+  font-weight: 300;
+}
+
+/* ✅ 소멸 전용 스타일 (네 기존 유지) */
+.history-item--expired .history-item__sign,
+.history-item--expired .history-item__value,
+.history-item--expired .history-item__unit,
+.history-item--expired .history-item__state{
+  color: #8f8f8f;
+  font-family: "Pretendard-Medium", sans-serif;
+  font-weight: 500;
+}
+
+.history-item--expired .history-item__value{
+  font-family: "Pretendard-SemiBold", sans-serif;
+  font-weight: 500;
+}
+
+.history-item--expired .history-item__state{
+  font-family: "Pretendard-Light", sans-serif;
+  font-weight: 300;
+}
+
+
+/* =========================================================
+   Bottom Sheet (Figma frame 스타일 반영)
+========================================================= */
+.sheet{
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: none;
+}
+.sheet.is-open{ display: block; }
+
+.sheet__dim{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.35);
+}
+
+.sheet__panel{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: #fff;
+  border-radius: 1rem 1rem 0 0;
+  padding: 2rem 1rem 2rem 1rem;
+  
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.sheet__head{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sheet__title{
+  margin: 0;
+  color: var(--gray-800, #252b37);
+  font-family: "Pretendard-SemiBold", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 600;
+}
+
+.sheet__close{
+  position: absolute;
+  right: 0;
+  top: -0.5rem;
+  transform: none;
+
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 0;
+}
+
+.sheet__close-icon{
+  width: 1.125rem;
+  height: 1.125rem;
+  display: block;
+}
+
+.sheet__list{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  max-height: 15.5rem;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sheet__item{
+  position: relative;
+  height: 2.75rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.sheet__radio{
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sheet__label{
+  height: 100%;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.sheet__label-text{
+  font-family: "Pretendard-Light", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.125rem;
+  letter-spacing: -0.01875rem;
+  color: var(--gray-800, #252b37);
+}
+
+.sheet__radio:checked + .sheet__label .sheet__label-text{
+  color: var(--c-point);
+  font-weight: 600;
+}
+
+.sheet__actions{
+  margin-top: 0;
+}
+
+.sheet__submit{
+  width: 100%;
+  height: 3.5rem;
+  border-radius: 0.75rem;
+  background-color: var(--c-point);
+
+  color: #fcf7e4;
+  font-family: "PretendardVariable-SemiBold", sans-serif;
+  font-size: 1rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+}
+
+.sheet__label:hover{
+  background: #fcfbfe;
+}
+
+.sheet__label:focus-visible{
+  outline: 0.125rem solid rgba(91, 61, 245, 0.35);
+  outline-offset: 0.125rem;
+  background: #fcfbfe;
+}
+
+
+/* =========================================================
+   Layout: body 스크롤 + sticky 정상 동작 
+========================================================= */
+html, body{
+  height: 100%;
+}
+
+body, #index, .wrap{
+  background: #fff; /* Safari 비침 방지 */
+}
+
+#index.index{
+  min-height: 100svh;
+}
+
+.wrap{
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  overflow: visible; /* sticky 죽이는 overflow 방지 */
+}
+
+.content{
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: visible; /* 내부 스크롤 금지: body가 스크롤 */
+  display: flex;
+  flex-direction: column;
+}
+
+/* ✅ footer는 main 밖에서 자연스럽게 아래로 */
+.footer-notice{
+  margin-top: auto;
+}
+
+.footer-notice,
+.footer-sign{
+  position: static !important;
+  top: auto !important;
+  bottom: auto !important;
+}
+
+/* =========================================================
+   Sticky Stack 
+========================================================= */
+:root{
+  --header-h: 56px; 
+}
+
+html, body{
+  height: 100%;
+}
+
+#index.index{
+  min-height: 100svh;
+}
+
+.wrap{
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  overflow: visible; 
+}
+
+
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-h);
+  background: #fff;
+
+  /* Safari sticky 렌더 안정화(유지) */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+
+.header .nav{
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.content{
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: visible; 
+  display: flex;
+  flex-direction: column;
+}
+
+
+.month-picker{
+  position: sticky;
+  top: var(--header-h);
+  z-index: 90;
+  background: #fff;
+
+
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+
+.footer-notice{
+  margin-top: auto;
+}
+.footer-notice,
+.footer-sign{
+  position: static !important;
+  top: auto !important;
+  bottom: auto !important;
+}
+
+
+/* =========================================================
+   적립 no 리스트
+========================================================= */
+.empty-state{
+  padding: 1rem;
+  height: 17.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.empty-state__icon{
+  width: 3.75rem;
+  height: 3.590625rem;
+  display: block;
+}
+
+.empty-state__text{
+  margin: 0;
+  color: var(--gray-700, #414651);
+  text-align: center;
+
+  font-family: "Pretendard-Regular", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   Point Empty
+========================================================= */
+.point-empty{
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.point-empty__content{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.875rem;
+  text-align: center;
+}
+
+.point-empty__image{
+  display: block;
+  width: 5rem;
+  height: auto;
+  max-width: none;
+}
+
+.point-empty__title{
+  margin: 0;
+  color: #414651;
+  text-align: center;
+  font-family: "Pretendard-Bold", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 700;
+}
+
+.point-empty__desc{
+  margin: 0;
+  color: var(--gray-700, #414651);
+  text-align: center;
+  font-family: "Pretendard-Regular", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 400;
+}
+
+.point-empty__refresh{
+  border: 0;
+  background: #eff2f7;
+  border-radius: 3.125rem;
+  padding: 0.25rem 0.625rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.point-empty__refresh-icon{
+  width: 1rem;
+  height: 1rem;
+  display: block;
+  max-width: none;
+}
+
+.point-empty__refresh-text{
+  color: #6c8ba9;
+  text-align: center;
+  font-family: "Pretendard-Medium", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   Footer Notice (알려드려요)
+========================================================= */
+.footer-notice{
+  background: var(--slate-100, #f1f5f9);
+  padding: 1rem 1rem;
+}
+
+.footer-notice__title{
+  margin: 0;
+  padding: 0 0 0.625rem;
+  color: var(--gray-700, #414651);
+  font-family: "Pretendard-Bold", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+
+.footer-notice__list{
+  margin: 0;
+  padding-left: 1rem;
+  color: var(--gray-500, #717680);
+  font-family: "Pretendard-Regular", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  letter-spacing: -0.02em;
+  list-style: disc;
+}
+
+.footer-notice__list li{
+  margin: 0.25rem 0;
+  list-style: disc;
+}
+
+
+/* =========================================================
+   Members Guide
+========================================================= */
+.members-guide{
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.members-guide__eyebrow{
+  width: 100%;
+  margin: 0 0 1.25rem;
+  color: var(--gray-800, #252b37);
+  text-align: left;
+  font-family: "Pretendard-Bold", sans-serif;
+  font-size: 1.375rem;
+  line-height: 140%;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.members-guide__image{
+  width: 100%;
+  margin-bottom: 1.25rem;
+  display: flex;
+  justify-content: center;
+}
+
+.members-guide__image img{
+  display: block;
+  width: 100%;
+  max-width: 16.5rem;
+  height: auto;
+}
+
+.members-guide__text{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.members-guide__title{
+  margin: 0;
+  color: var(--gray-800, #343a40);
+  text-align: center;
+  font-family: "Pretendard-Bold", sans-serif;
+  font-size: 1rem;
+  line-height: 140%;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.members-guide__desc{
+  margin: 0;
+  color: var(--gray-600, #6d747b);
+  text-align: center;
+  font-family: "Pretendard-Medium", sans-serif;
+  font-size: 1rem;
+  line-height: 140%;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.members-guide__desc strong{
+  color: var(--gray-800, #343a40);
+  font-family: "Pretendard-SemiBold", sans-serif;
+  font-weight: 600;
+}
+
+.members-guide__button{
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 0.9375rem 1rem;
+  border: 0;
+  border-radius: 0.75rem;
+  border: 0.0625rem solid #2589F4;
+  background: #ffffff;
+  border-radius: 0.75rem;
+  color: #2589f4;
+  text-align: center;
+  font-family: "Pretendard-SemiBold", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+}
+
+
+
+/* =========================================================
+   Footer
+========================================================= */
+.footer-sign{
+  padding: 1rem 1.25rem;
+  background: #f1f5f9;
+}
+
+.footer-sign__row{
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.footer-sign__brand{
+  margin: 0;
+  flex: 1;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+  color: #333333;
+}
+
+.footer-sign__copy{
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  color: #999999;
+}
+
+.footer-sign__links{
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.footer-sign__links a{
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+  color: #333333;
+  text-decoration: none;
+}
+
+/* Footer v2 */
+.footer-sign.footer-sign--v2 .footer-sign__links{
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-sign.footer-sign--v2 .footer-sign__policies{
+  display: flex;
+  gap: 0.4375rem;
+  align-items: center;
+}
+
+.footer-sign.footer-sign--v2 .footer-sign__policy{
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  color: #666666;
+  text-decoration: none;
+}
+
+.footer-sign.footer-sign--v2 .footer-sign__policy--strong{
+  font-weight: 700;
+}
+
+.footer-sign.footer-sign--v2 .footer-sign__links{
+  flex-wrap: wrap;
+  row-gap: 0.5rem;
+}
+
+
+/* =========================================================
+   Desktop preview only
+========================================================= */
+@media (min-width: 580px){
+  #index { box-shadow: none; }
+
+  .wrap{
+    width: 28.75rem; /* 460px */
+    margin: 0 auto;
+  }
+
+  .floating-cta{
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: 28.75rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .sheet{
+    width: 28.75rem;
+    margin: 0 auto;
+  }
+
+  .footer-sign{
+    width: 28.75rem;
+    margin: 0 auto;
+  }
+}

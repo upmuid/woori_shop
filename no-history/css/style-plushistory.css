@@ -1,0 +1,962 @@
+/* =========================================================
+   Header Nav
+========================================================= */
+.nav {
+  background: var(--slate-100, #fff);
+  border-bottom: 0.0625rem solid var(--gray-200, transparent);
+  padding: 1rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav__list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__left,
+.nav__center,
+.nav__right {
+  display: flex;
+  align-items: center;
+}
+
+/* 좌/우 영역 폭을 동일하게 만들어 타이틀을 '진짜 중앙'에 고정 */
+.nav__left,
+.nav__right {
+  width: 1.5rem;
+  flex: 0 0 1.5rem;
+}
+
+.nav__back {
+  width: 1.5rem;      /* 24px */
+  height: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.nav__icon {
+  width: 1.125rem;    /* 18px */
+  height: 1.125rem;
+  display: block;
+}
+
+.nav__center {
+  flex: 1 1 auto;
+  justify-content: center;
+  min-width: 0;
+}
+
+.nav__title {
+  color: var(--gray-900, #181d27);
+  text-align: center;
+  font-family: var(--pretendard-h1-b-font-family, "Pretendard-Bold", sans-serif);
+  font-size: var(--pretendard-h1-b-font-size, 1rem);
+  line-height: var(--pretendard-h1-b-line-height, 1.5rem);
+  letter-spacing: var(--pretendard-h1-b-letter-spacing, -0.01875rem);
+  font-weight: var(--pretendard-h1-b-font-weight, 700);
+
+  /* 길어질 때 안전장치 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nav__spacer {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+}
+
+
+/* =========================================================
+   Point Summary Plus (플러스콘 버전 요약)
+========================================================= */
+.point-summary-plus{
+  padding: 1rem;
+}
+
+.point-summary-plus__card{
+  background: var(--slate-50, #f8fafc);
+  border-radius: 1rem;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+/* 합계 행 */
+.point-summary-plus__total{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.point-summary-plus__label{
+  margin: 0;
+  color: var(--gray-800, #252b37);
+  font-family: "Pretendard-SemiBold", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 600;
+}
+
+.point-summary-plus__total-value{
+  margin: 0;
+  color: #5b3df5; /* ✅ 플러스콘 버전 포인트 컬러 */
+  font-family: "Pretendard-SemiBold", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.point-summary-plus__divider{
+  width: 100%;
+  border: 0;
+  border-top: 0.0625rem solid #e2e8f0; /* slate-200 느낌 */
+  margin: 0.25rem 0; /* 위아래 간격(원하면 0으로) */
+}
+
+
+/* 월별 리스트 */
+.point-summary-plus__breakdown{
+  margin: 0;
+  padding-top: 0.625rem;                /* 라인과 텍스트 간격 */
+  border-top: 0.0625rem solid #e2e8f0;  /* 구분선 */
+}
+.point-summary-plus__row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.point-summary-plus__month{
+  margin: 0;
+  color: var(--gray-800, #252b37);
+  font-family: "Pretendard-Regular", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 400;
+}
+
+.point-summary-plus__value{
+  margin: 0;
+  color: var(--slate-800, #1e293b);
+  font-family: "Pretendard-SemiBold", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   Controls wrapper (탭 + month-picker sticky)
+========================================================= */
+
+.point-history__controls{
+  position: sticky;
+  top: 0;               /* ✅ nav가 fixed/sticky면 nav 높이만큼으로 조정 */
+  z-index: 40;
+  background: #fff;
+
+  padding: 0.875rem;    /* 좌우 14 */
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  border-bottom: 0.0625rem solid transparent; /* ✅ 기본은 안보이게 */
+}
+
+.point-history__controls.is-stuck{
+  border-bottom-color: #eef2f6;               /* ✅ 붙을 때만 라인 */
+}
+
+
+
+
+/* =========================================================
+   Segmented Tabs
+========================================================= */
+
+.segmented{
+  position: relative;
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  background: var(--slate-50, #f8fafc);
+}
+
+.segmented__tab{
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  height: 2.5rem;
+  border: 0;
+  background: transparent;
+  border-radius: 0.625rem;
+  font-family: "Pretendard-SemiBold", sans-serif;
+  font-size: 1rem;
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 600;
+  color: var(--gray-400, #a4a7ae);
+  cursor: pointer;
+}
+
+.segmented__tab.is-active{
+  color: var(--gray-800, #252b37);
+}
+
+.segmented__thumb{
+  position: absolute;
+  top: 0.25rem;
+  left: 0.25rem;
+  width: calc(50% - 0.25rem);
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0rem 0.0625rem 0.125rem rgba(0,0,0,0.05);
+  transform: translateX(0%);
+  transition: transform .2s ease;
+}
+
+.segmented.is-use .segmented__thumb{
+  transform: translateX(100%);
+}
+
+
+/* =========================================================
+   Month Picker (월 선택 트리거)
+========================================================= */
+
+.month-picker{
+  padding: 0.75rem 0; /* ✅ 2rem은 너무 커서 축소 (원하면 다시 키우기) */
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.month-picker__trigger{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+
+  padding: 0;
+  background: none;
+  border: 0;
+}
+
+.month-picker__ym{
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  color: var(--gray-800, #252b37);
+  font-family: "Pretendard-SemiBold", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 600;
+}
+
+.month-picker__icon-hit{
+  width: 1.5rem;   /* 24 */
+  height: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.month-picker__icon{
+  width: 1.125rem;  /* 18 */
+  height: 1.125rem;
+  display: block;
+}
+
+.month-picker__range{
+  margin: 0;
+  color: var(--gray-700, #414651);
+  font-family: "Pretendard-Light", sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+
+/* =========================================================
+   적립 내역 리스트
+========================================================= */
+
+
+.history-list{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.history-item{
+  background: #fff;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: flex-start; /* 2줄 정렬 */
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+/* 구분선(옵션) */
+.history-item + .history-item{
+  border-top: 0.0625rem solid var(--slate-100, #f1f5f9);
+}
+
+/* 날짜: 왼쪽 고정폭 */
+.history-item__date{
+  margin: 0;
+  flex: 0 0 3.25rem; /* 여기 조절하면 캡쳐처럼 딱 맞음 */
+  color: var(--gray-800, #252b37);
+  font-family: "Pretendard-Regular", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 400;
+}
+
+/* 가운데: 상점/시간 2줄 */
+.history-item__mid{
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.history-item__merchant{
+  margin: 0;
+  color: var(--gray-800, #252b37);
+  font-family: "Pretendard-Medium", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 500;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.history-item__time{
+  margin: 0;
+  color: var(--gray-700, #414651);
+  font-family: "Pretendard-Light", sans-serif;
+  font-size: 13px;
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 300;
+}
+
+/* 오른쪽: 금액/상태 2줄 */
+.history-item__right{
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.history-item__amount{
+  margin: 0;
+  display: inline-flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.history-item__state{
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+}
+
+/* 타입별 컬러 */
+.history-item--earned .history-item__sign,
+.history-item--earned .history-item__value,
+.history-item--earned .history-item__unit,
+.history-item--earned .history-item__state{
+  color: #5b3df5;
+  font-family: "Pretendard-Medium", sans-serif;
+  font-weight: 500;
+}
+
+.history-item--earned .history-item__value{
+  font-family: "Pretendard-SemiBold", sans-serif;
+  font-weight: 600;
+}
+
+.history-item--pending .history-item__sign,
+.history-item--pending .history-item__value{
+  color: var(--slate-700, #334155);
+  font-family: "Pretendard-Medium", sans-serif;
+  font-weight: 500;
+}
+
+.history-item--pending .history-item__value{
+  font-family: "Pretendard-SemiBold", sans-serif;
+  font-weight: 600;
+}
+
+.history-item--pending .history-item__unit,
+.history-item--pending .history-item__state{
+  color: var(--gray-700, #414651);
+  font-family: "Pretendard-Light", sans-serif;
+  font-weight: 300;
+}
+
+/* =========================================================
+   Use List (사용 내역)
+========================================================= */
+
+.use-list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.use-item{
+  background: #fff;
+  padding: 12px 16px;           /* 좌우 16 */
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.use-item + .use-item{
+  /* margin-top: 1.25rem;        */
+}
+
+.use-item__date{
+  margin: 0;
+  color: var(--gray-800, #252b37);
+  font-family: "Pretendard-Regular", sans-serif;
+  font-size: 0.875rem;       /* 14 */
+  line-height: 1.3125rem;    /* 21 */
+  letter-spacing: -0.01875rem;
+  font-weight: 400;
+  flex: 0 0 auto;
+}
+
+.use-item__body{
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  min-width: 0;              /* ✅ ellipsis 필수 */
+}
+
+.use-item__left{
+  min-width: 0;              /* ✅ ellipsis 필수 */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;               /* 8 */
+}
+
+.use-item__title{
+  margin: 0;
+  color: var(--gray-800, #252b37);
+  font-family: "Pretendard-Medium", sans-serif;
+  font-size: 0.875rem;       /* 14 */
+  line-height: 1.3125rem;    /* 21 */
+  letter-spacing: -0.01875rem;
+  font-weight: 500;
+
+overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;        /* ✅ 2줄 */
+  -webkit-box-orient: vertical; /* ✅ 라인클램프 필수 */
+}
+
+.use-item__mid{
+  flex: 0 0 294px;   /* 294px 고정 */
+  width: 294px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.use-item__time{
+  margin: 0;
+  color: var(--gray-400, #a4a7ae);
+  font-family: "Pretendard-Light", sans-serif;
+  font-size: 0.75rem;        /* 12 */
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 300;
+}
+
+.use-item__right{
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.use-item__amount{
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--slate-700, #334155);
+}
+
+.use-item__sign{
+  font-family: "Pretendard-Medium", sans-serif;
+  font-size: 1.125rem;       /* 18 */
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 500;
+}
+
+.use-item__value{
+  font-family: "Pretendard-SemiBold", sans-serif;
+  font-size: 0.875rem;       /* 14 */
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 600;
+}
+
+.use-item__unit{
+  color: var(--gray-700, #414651);
+  font-family: "Pretendard-Medium", sans-serif;
+  font-size: 0.875rem;       /* 14 */
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 500;
+}
+
+.use-item__state{
+  margin: 0;
+  color: var(--gray-400, #a4a7ae);
+  font-family: "Pretendard-Light", sans-serif;
+  font-size: 0.75rem;        /* 12 */
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 300;
+  text-align: right;
+}
+
+
+/* =========================================================
+   Bottom Sheet (Figma frame 스타일 반영)
+========================================================= */
+
+/* 오버레이 컨테이너 */
+.sheet{
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: none; /* 기본 숨김 */
+}
+
+.sheet.is-open{ display: block; }
+
+/* 딤 */
+.sheet__dim{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.35);
+}
+
+/* 패널 = frame-2043686381 */
+.sheet__panel{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: #fff;
+  border-radius: 1rem 1rem 0 0;    /* 상단 라운드 */
+  padding: 2rem 1rem 2rem 1rem;   /* Figma: 2rem 1rem 2rem 1rem */
+  
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;                   /* Figma: gap 1.25rem */
+}
+
+/* 헤더 = frame-2043686327 */
+.sheet__head{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 타이틀 텍스트 = .div */
+.sheet__title{
+  margin: 0;
+  color: var(--gray-800, #252b37);
+  font-family: "Pretendard-SemiBold", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 600;
+}
+
+/* 닫기 버튼 (아이콘 absolute 배치 느낌) */
+.sheet__close{
+  position: absolute;
+  right: 0;          /* 패널 우측 패딩(1rem) 기준으로 딱 붙음 */
+  top: -0.5rem;      /* ✅ 위로 살짝 떠있게 (필요시 -0.75rem 등 조절) */
+  transform: none;
+
+  width: 1.5rem;     /* ✅ 터치영역 24 */
+  height: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 0;
+}
+
+.sheet__close-icon{
+  width: 1.125rem;  /* 18px */
+  height: 1.125rem; /* 18px */
+  display: block;
+}
+
+/* 리스트 */
+.sheet__list{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  max-height: 15.5rem; /* 필요 시 조절 */
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* 항목 사이 살짝 띄우고 싶으면 (Figma는 카드 느낌도 있음) */
+}
+
+/* 항목 기본 = frame-2043686384/6385 */
+.sheet__item{
+  position: relative;
+  height: 2.75rem;           /* Figma: 2.75rem */
+  border-radius: 1rem;       /* 선택항목은 라운드였음 */
+  overflow: hidden;
+}
+
+/* 라디오 숨김 */
+.sheet__radio{
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 라벨 */
+.sheet__label{
+  height: 100%;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* Figma는 중앙정렬 느낌 */
+  cursor: pointer;
+}
+
+/* 기본(미선택) */
+.sheet__label-text{
+  font-family: "Pretendard-Light", sans-serif; /* or PretendardVariable */
+  font-weight: 300;                           /* 라이트 */
+  font-size: 1rem;
+  line-height: 1.125rem;
+  letter-spacing: -0.01875rem;
+  color: var(--gray-800, #252b37);
+}
+
+/* 선택 상태 = frame-2043686383 + _2026-2 (체크는 제거) */
+.sheet__radio:checked + .sheet__label{
+  /* background: #fcfbfe; */
+}
+
+.sheet__radio:checked + .sheet__label .sheet__label-text{
+  color: #5b3df5;
+  font-weight: 600;
+}
+
+/* 버튼 영역 = frame-2043686387 */
+.sheet__actions{
+  margin-top: 0; /* gap으로 이미 떨어짐 */
+}
+
+/* CTA 버튼 = frame-2043686386 */
+.sheet__submit{
+  width: 100%;
+  height: 3.5rem;
+  border-radius: 0.75rem;
+  background: #5b3df5;
+
+  color: #fcf7e4;
+  font-family: "PretendardVariable-SemiBold", sans-serif;
+  font-size: 1rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+}
+
+
+
+
+/* hover 시 배경 */
+.sheet__label:hover{
+  background: #fcfbfe;
+}
+
+/* 키보드 포커스(접근성) */
+.sheet__label:focus-visible{
+  outline: 0.125rem solid rgba(91, 61, 245, 0.35);
+  outline-offset: 0.125rem;
+  background: #fcfbfe;
+}
+
+
+/* =========================================================
+   Layout (강제 height/내부스크롤 없이, 최소 100svh만 보장)
+========================================================= */
+html, body{
+  height: 100%;
+}
+
+#index.index{
+  min-height: 100svh;          /* ✅ ‘최소’만 1화면 */
+}
+
+.wrap{
+  min-height: 100svh;          /* ✅ wrap 전체가 최소 1화면 */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+}
+
+/* header는 자연 높이 */
+.header{ flex: 0 0 auto; }
+
+/* ✅ main이 남는 공간을 먹어서 footer를 아래로 밀어줌 */
+.content{
+  flex: 1 1 auto;
+  min-height: 0;
+
+  /* ✅ 내부 스크롤 강제하지 말기 (기존 페이지 스크롤 유지) */
+  overflow: visible;
+}
+
+/* ✅ point-history도 content 안에서 남는 공간을 자연스럽게 채우도록 */
+.point-history{
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 리스트는 늘어나도 되고(컨텐츠가 적으면 빈 공간만 자연히 채움) */
+.point-history__list{
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+/* ✅ 탭 토글 겹침 방지(이건 레이아웃 강제가 아니라 안전장치) */
+.point-history__list > [data-panel][hidden]{
+  display: none !important;
+}
+
+
+
+/* ✅ sticky로 붙은 상태 */
+/* .month-picker.is-stuck{
+  border-bottom-color: #eef2f6;
+} */
+
+/* =========================================================
+   적립 no 리스트
+========================================================= */
+.empty-state{
+  padding: 1rem;
+  height: 17.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem; /* 아이콘-텍스트 간격 */
+}
+
+.empty-state__icon{
+  width: 3.75rem;
+  height: 3.590625rem;
+  display: block;
+}
+
+.empty-state__text{
+  margin: 0;
+  color: var(--gray-700, #414651);
+  text-align: center;
+
+  font-family: "Pretendard-Regular", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 400;
+}
+
+
+
+
+
+/* =========================================================
+   Footer Notice (알려드려요)
+========================================================= */
+.footer-notice{
+  background: var(--slate-100, #f8fafc);
+  padding: 1rem 1rem;      /* footer-sign 위에서 자연스럽게 이어지게 */
+}
+
+.footer-notice__title{
+  margin: 0;
+  padding: 0 0 0.625rem;     /* 10px */
+  color: var(--gray-700, #414651);
+  font-family: "Pretendard-Bold", sans-serif;
+  font-size: 0.875rem;       /* 14px */
+  line-height: 1.25rem;      /* 20px */
+  font-weight: 700;
+}
+
+.footer-notice__list{
+  margin: 0;
+  padding-left: 1rem;        /* 기본 bullet 들여쓰기 */
+  color: var(--gray-500, #717680);
+  font-family: "Pretendard-Regular", sans-serif;
+  font-size: 0.75rem;        /* 12px */
+  line-height: 1.25rem;      /* 20px */
+  letter-spacing: -0.02em;
+  list-style: disc;         /* ✅ 불릿 다시 켜기 */
+  padding-left: 1rem;       /* ✅ 불릿이 보이게 들여쓰기 */
+  margin: 0;
+}
+
+.footer-notice__list li{
+  margin: 0.25rem 0;         /* 항목 간 간격 */
+  list-style: disc;
+}
+
+/* =========================================================
+   Footer
+========================================================= */
+.footer-sign {
+  padding: 1rem 1.25rem;
+  background: #f8fafc;
+  
+}
+
+.footer-sign__row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.footer-sign__brand {
+  margin: 0;
+  flex: 1;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+  color: #333333;
+}
+
+.footer-sign__copy {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  color: #999999;
+}
+
+.footer-sign__links {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.footer-sign__links a {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+  color: #333333;
+  text-decoration: none;
+}
+
+
+
+/* =========================================================
+   Desktop preview only
+========================================================= */
+@media (min-width: 580px){
+  #index {
+    box-shadow: 0.1875rem 0.25rem 0.6875rem rgba(0, 0, 0, 0.125);
+    
+  }
+
+  .wrap {
+    width: 28.75rem; /* 460px */
+    margin: 0 auto;
+  }
+
+  .floating-cta{
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: 28.75rem; /* 460px */
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+.sheet{
+        width: 28.75rem; /* 460px */
+    margin: 0 auto;
+}
+
+  .footer-sign {
+    width: 28.75rem;
+    margin: 0 auto;
+  }
+
+
+
+
+}

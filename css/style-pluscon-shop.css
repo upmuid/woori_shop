@@ -1,0 +1,801 @@
+/* =========================================================
+   Header Nav
+========================================================= */
+.nav {
+  background: var(--slate-100, #f1f5f9);
+  border-bottom: 0.0625rem solid var(--gray-200, transparent);
+  padding: 1rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav__list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__left,
+.nav__center,
+.nav__right {
+  display: flex;
+  align-items: center;
+}
+
+/* 좌/우 영역 폭을 동일하게 만들어 타이틀을 '진짜 중앙'에 고정 */
+.nav__left,
+.nav__right {
+  width: 1.5rem;
+  flex: 0 0 1.5rem;
+}
+
+.nav__back {
+  width: 1.5rem;
+  /* 24px */
+  height: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.nav__icon {
+  width: 1.125rem;
+  /* 18px */
+  height: 1.125rem;
+  display: block;
+}
+
+.nav__center {
+  flex: 1 1 auto;
+  justify-content: center;
+  min-width: 0;
+}
+
+.nav__title {
+  color: var(--gray-900, #181d27);
+  text-align: center;
+  font-family: var(--pretendard-h1-b-font-family, "Pretendard-Bold", sans-serif);
+  font-size: var(--pretendard-h1-b-font-size, 1rem);
+  line-height: var(--pretendard-h1-b-line-height, 1.5rem);
+  letter-spacing: var(--pretendard-h1-b-letter-spacing, -0.01875rem);
+  font-weight: var(--pretendard-h1-b-font-weight, 700);
+
+  /* 길어질 때 안전장치 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nav__spacer {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+}
+
+/* =========================================================
+   Point Summary (nav 아래 상단 영역)
+========================================================= */
+.point-summary {
+  background: var(--slate-100, #f1f5f9);
+  padding: 1rem;
+}
+
+/* Card */
+.point-card {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Head */
+.point-card__head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.point-card__title-row {
+  display: flex;
+  align-items: center;
+
+}
+
+.point-card__title {
+  color: var(--gray-900, #181d27);
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
+  font-weight: 500;
+}
+
+/* Body */
+.point-card__body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.point-card__amount {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+
+
+.point-card__value {
+  color: var(--gray-800, #252b37);
+  font-size: 1.75rem;
+  line-height: 2.625rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 700;
+}
+
+
+
+/* =========================================================
+   플러스콘 카테고리
+========================================================= */
+
+.pluscon-category {
+  background: #f1f5f9;
+  padding: 1rem 1rem 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.pluscon-category::-webkit-scrollbar {
+  display: none;
+}
+
+.pluscon-category__scroll {
+  display: inline-flex;
+  width: max-content;
+  min-width: 100%;
+  gap: 0.5rem;
+  padding-right: 1rem;
+}
+
+.pluscon-category__chip {
+  flex: 0 0 auto;
+  border: 0;
+  border-radius: 1rem;
+  background: #fff;
+  padding: 0.375rem 1rem;
+  white-space: nowrap;
+
+  color: #334155;
+  font-family: "Pretendard", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  font-weight: 500;
+}
+
+.pluscon-category__chip.is-active {
+  background: #252b37;
+  color: #fff;
+  font-weight: 600;
+}
+
+
+
+/* =========================================================
+   상품 보는 방식 선택
+========================================================= */
+
+.shop-section__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+
+
+}
+
+.shop-section__title {
+  flex: 1;
+  min-width: 0;
+  color: #181d27;
+  font-family: "Pretendard", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  word-break: keep-all;
+}
+
+.view-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex: 0 0 auto;
+  padding: 0.25rem;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.view-toggle__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.25rem;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  flex: 0 0 auto;
+}
+
+.view-toggle__btn.is-active {
+  background: #334155;
+}
+
+
+
+
+/* =========================================================
+   바둑판형식 
+========================================================= */
+
+
+
+/* .shop-section__title {
+  color: #1e293b;
+  font-family: "Pretendard", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.003em;
+} */
+
+/* .view-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+} */
+
+/* .view-toggle__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+} */
+
+.view-toggle__icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+
+}
+
+.product-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.product-card {
+  position: relative;
+  display: flex;
+  text-decoration: none;
+  background: #ffffff;
+}
+
+.product-card__thumb {
+  background: #faf8f8;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.product-card__img {
+  display: block;
+}
+
+.product-card__content {
+  min-width: 0;
+}
+
+.product-card__brand {
+  color: #717680;
+  font-family: "Pretendard", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  letter-spacing: -0.003em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.product-card__info {
+  min-width: 0;
+}
+
+.product-card__name {
+  color: #1e293b;
+  font-family: "Pretendard", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  letter-spacing: -0.003em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.product-card__price {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.product-card__point,
+.product-card__unit {
+  color: var(--c-point);
+  font-family: "Pretendard", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  font-weight: 700;
+  letter-spacing: -0.003em;
+  white-space: nowrap;
+}
+
+.product-card__arrow {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+}
+
+/* grid */
+.product-list--grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.product-list--grid .product-list__item {
+  min-width: 0;
+}
+
+.product-list--grid .product-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 15.15625rem;
+  /* 242.5px */
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #fff;
+}
+
+.product-list--grid .product-card__thumb {
+  width: 100%;
+  height: 8rem;
+  flex-shrink: 0;
+  padding: 0.625rem;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #faf8f8;
+  overflow: hidden;
+}
+
+.product-list--grid .product-card__img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.product-list--grid .product-card__content {
+  flex: 1;
+  min-width: 0;
+  padding: 0.625rem 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0;
+}
+
+.product-list--grid .product-card__brand {
+  color: #717680;
+  font-family: "Pretendard", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  letter-spacing: -0.003em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 1.125rem;
+  margin: 0;
+}
+
+.product-list--grid .product-card__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex: 1;
+  min-width: 0;
+}
+
+.product-list--grid .product-card__name {
+  color: #1e293b;
+  font-family: "Pretendard", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  /* 22px */
+  font-weight: 600;
+  letter-spacing: -0.003em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  min-height: 2.75rem;
+  /* 22px * 2 */
+  max-height: 2.75rem;
+  margin: 0;
+  width: 100%;
+}
+
+.product-list--grid .product-card__price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.product-list--grid .product-card__point,
+.product-list--grid .product-card__unit {
+  color: var(--c-point);
+  font-family: "Pretendard", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  font-weight: 700;
+  letter-spacing: -0.003em;
+  white-space: nowrap;
+}
+
+.product-list--grid .product-card__arrow {
+  display: none;
+}
+
+/* list */
+.product-list--list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.product-list--list .product-list__item {
+  width: 100%;
+}
+
+.product-list--list .product-card {
+  align-items: center;
+  gap: 0.625rem;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.product-list--list .product-card__thumb {
+  width: 5rem;
+  height: 5rem;
+  padding: 0.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  background: #faf8f8;
+  overflow: hidden;
+}
+
+.product-list--list .product-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.product-list--list .product-card__content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.product-list--list .product-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.product-list--list .product-card__name {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.product-list--list .product-card__arrow {
+  display: block;
+  align-self: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   Shop List (2열 그리드)
+========================================================= */
+.shop-section {
+  background: var(--slate-100, #f1f5f9);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.shop-section__title {
+  color: var(--gray-900, #181d27);
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
+  font-weight: 600;
+}
+
+/* ✅ 핵심: 2열 자동 정렬 */
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.625rem;
+}
+
+/* li는 레이아웃만 담당 */
+.shop-grid__item {
+  min-width: 0;
+}
+
+/* Card */
+.shop-card {
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  min-height: 8.25rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+/* meta */
+.shop-card__meta {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.shop-card__name {
+  color: var(--gray-700, #414651);
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.shop-card__rate {
+  color: var(--slate-800, #1e293b);
+  font-size: 1.5rem;
+  line-height: 1.3125rem;
+  font-weight: 600;
+}
+
+/* logo box */
+.shop-card__logo {
+  background: var(--slate-50, #f8fafc);
+  border-radius: 0.5rem;
+  border: 0.0625rem solid var(--slate-100, #f1f5f9);
+  width: 3.125rem;
+  height: 3.125rem;
+  padding: 0 0.25rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* logo image */
+.shop-card__logo-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* 옵션: 둥근 로고(알리/트립 등) */
+.shop-card__logo-img.is-round {
+  border-radius: 0.625rem;
+}
+
+/* 옵션: 세로로 긴 로고(쿠팡 같은) */
+.shop-card__logo-img.is-tall {
+  height: 2.6225rem;
+  /* 피그마 값 유지 느낌 */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   Footer
+========================================================= */
+.footer-sign {
+  padding: 1rem 1.25rem;
+  background: #f1f5f9;
+
+}
+
+.footer-sign__row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.footer-sign__brand {
+  margin: 0;
+  flex: 1;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+  color: #333333;
+}
+
+.footer-sign__copy {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  color: #999999;
+}
+
+.footer-sign__links {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.footer-sign__links a {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+  color: #333333;
+  text-decoration: none;
+}
+
+/* =========================
+   Footer v2 (addon only)
+   - 기존 v1 CSS 유지
+========================= */
+.footer-sign.footer-sign--v2 .footer-sign__links {
+  justify-content: space-between;
+  /* 좌: 이용문의 / 우: 약관 */
+  align-items: center;
+}
+
+/* 약관 링크 그룹 */
+.footer-sign.footer-sign--v2 .footer-sign__policies {
+  display: flex;
+  gap: 0.4375rem;
+  align-items: center;
+}
+
+/* 약관 링크 스타일(회색) */
+.footer-sign.footer-sign--v2 .footer-sign__policy {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  color: #666666;
+  text-decoration: none;
+}
+
+/* 개인정보처리방침만 강조 */
+.footer-sign.footer-sign--v2 .footer-sign__policy--strong {
+  font-weight: 700;
+}
+
+/* (선택) 너무 좁을 때 줄바꿈 자연스럽게 */
+.footer-sign.footer-sign--v2 .footer-sign__links {
+  flex-wrap: wrap;
+  row-gap: 0.5rem;
+}
+
+
+
+
+
+/* =========================================================
+   Desktop preview only
+========================================================= */
+@media (min-width: 580px) {
+  #index {
+    box-shadow: 0.1875rem 0.25rem 0.6875rem rgba(0, 0, 0, 0.125);
+  }
+
+  .wrap {
+    width: 28.75rem;
+    /* 460px */
+    margin: 0 auto;
+    height: 100svh;
+    overflow: hidden;
+  }
+
+  .footer-sign {
+    width: 28.75rem;
+    margin: 0 auto;
+  }
+}

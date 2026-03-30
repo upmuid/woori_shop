@@ -1,0 +1,868 @@
+/* =========================================================
+   Typography & Layout Spacing
+========================================================= */
+
+/* Use flex on .wrap down to content for sticky footer */
+.wrap--flex {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content--flex {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 5.5rem; /* 플로팅 버튼(3.5rem) + 상하 패딩(1rem×2) 여백 — 풋터가 버튼 위로 스크롤됨 */
+  overflow-y: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* 버튼 없는 화면(교환 완료 등)에서는 여백 제거 */
+.content--flex.content--no-bottom-action {
+  padding-bottom: 0;
+}
+
+.content--flex::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera*/
+}
+
+/* =========================================================
+   1. Title Section
+========================================================= */
+.detail-title {
+  text-align: center;
+  padding: 1.5rem 1rem 1rem;
+}
+
+.detail-title__brand {
+  color: #414651;
+  font-family: "Pretendard", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.detail-title__name {
+  color: #181d27;
+  font-family: "Pretendard", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* =========================================================
+   2. Image Section
+========================================================= */
+.detail-image {
+  padding: 0 1rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.detail-image__box {
+  background: #faf8f8;
+  border-radius: 1rem;
+  padding: 0.625rem;
+  width: 10.375rem;
+  height: 8.0625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-image__box img {
+  width: 9.03375rem;
+  height: 6.75rem;
+  object-fit: contain;
+}
+
+/* =========================================================
+   3. Point Summary Box
+========================================================= */
+.detail-point {
+  padding: 0 1rem 2rem;
+}
+
+.point-box {
+  background: var(--slate-50, #f8fafc);
+  border-radius: 1rem;
+  border: 0.0625rem solid var(--slate-50, #f8fafc);
+  display: flex;
+  flex-direction: column;
+}
+
+.point-box__top {
+  border-radius: 1rem 1rem 0 0;
+  padding: 1rem 1rem 0.625rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.point-box__bottom {
+  background: var(--slate-100, #f1f5f9);
+  border-radius: 0 0 1rem 1rem;
+  padding: 0.625rem 1rem 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.point-box__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.point-box__label,
+.point-box__val {
+  color: var(--slate-800, #1e293b);
+  font-family: "Pretendard", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.003em;
+}
+
+.point-box__label--gray,
+.point-box__val--gray {
+  color: var(--gray-600, #535862);
+  font-weight: 400;
+}
+
+.point-box__val-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.badge--green {
+  background: #ecf9f2;
+  color: var(--c-point);
+  font-size: 0.625rem;
+  font-weight: 500;
+  line-height: 1.375rem;
+  padding: 0 0.375rem;
+  border-radius: 0.375rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.point-box__label--green,
+.point-box__val--green {
+  color: var(--c-point);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+
+/* =========================================================
+  교환 불가 상태
+========================================================= */
+
+.badge--red {
+  background: #fbe4e2;
+  color: #fb5652;
+  font-size: 0.625rem;
+  font-weight: 500;
+  line-height: 1.375rem;
+  padding: 0 0.375rem;
+  border-radius: 0.375rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.point-box__label--red,
+.point-box__val--red {
+  color: #d23838;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* =========================================================
+   4. Form Section
+========================================================= */
+.detail-form {
+  padding: 1rem 1rem 2rem 1rem;
+}
+
+.detail-form__title {
+  color: var(--gray-900, #181d27);
+  font-family: "Pretendard", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.375rem;
+  letter-spacing: -0.003em;
+  font-weight: 600;
+  margin: 0 0 1.25rem 0;
+}
+
+.input-group {
+  margin-bottom: 1.25rem;
+}
+
+.input-text {
+  width: 100%;
+  height: 3.25rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  padding: 0 1rem;
+  font-size: 1rem;
+  color: #181d27;
+  outline: none;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.input-text::placeholder {
+  color: #94a3b8;
+}
+
+.input-text:focus {
+  border-color: #334155;
+}
+
+/* Checkbox Label Group - Optimized Touch Area */
+.agree-row {
+  display: flex;
+  align-items: center;
+}
+
+.agree-row__check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  cursor: pointer;
+  margin-left: -0.75rem;
+}
+
+.agree-row__btn {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 2.75rem;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.875rem;
+  color: #414651;
+  font-weight: 500;
+}
+
+.agree-row__btn img {
+  width: 1.25rem;
+  height: 1.25rem;
+  opacity: 0.5;
+}
+
+.checkbox-agree__input {
+  display: none;
+}
+
+.checkbox-agree__custom {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+
+.checkbox-agree__input:checked+.checkbox-agree__custom {
+  background: #252b37;
+  border-color: #252b37;
+}
+
+.checkbox-agree__input:checked+.checkbox-agree__custom::after {
+  content: "";
+  display: block;
+  width: 0.3125rem;
+  height: 0.5rem;
+  border-right: 0.125rem solid #fff;
+  border-bottom: 0.125rem solid #fff;
+  transform: rotate(45deg);
+  margin-bottom: 0.125rem;
+}
+
+.detail-form__notice {
+  margin: 0 0 8px 0;
+  color: #fb5652;
+  font-family: inherit;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+/* disabled state */
+.detail-form--disabled .input-text {
+  background: #f9f9f9;
+  border: 1px solid var(--gray-300, #d5d7da);
+  color: var(--gray-400, #a4a7ae);
+  cursor: not-allowed;
+}
+
+.detail-form--disabled .input-text::placeholder {
+  color: var(--gray-400, #a4a7ae);
+}
+
+.detail-form--disabled .input-text:focus {
+  border-color: var(--gray-300, #d5d7da);
+}
+
+.detail-form--disabled .agree-row {
+  opacity: 0.55;
+}
+
+.detail-form--disabled .agree-row__check {
+  cursor: default;
+}
+
+.detail-form--disabled .agree-row__btn {
+  color: var(--gray-400, #a4a7ae);
+  cursor: default;
+  pointer-events: none;
+}
+
+.detail-form--disabled .agree-row__btn img {
+  opacity: 0.35;
+}
+
+.detail-form--disabled .checkbox-agree__custom {
+  background: #f9f9f9;
+  border-color: var(--gray-300, #d5d7da);
+}
+
+.detail-form--disabled .checkbox-agree__input,
+.detail-form--disabled .checkbox-agree__custom {
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   5. Notice Section
+========================================================= */
+.detail-notice {
+  margin-top: auto;
+  padding: 2rem 1rem;
+  background: var(--slate-100, #f1f5f9);
+}
+
+.detail-notice__title {
+  margin: 0 0 0.625rem;
+  color: var(--gray-700, #414651);
+  font-family: "Pretendard", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.detail-notice__content {
+  color: var(--gray-500, #717680);
+  font-family: "Pretendard", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+}
+
+.detail-notice__item {
+  margin: 0;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+.detail-notice__subtitle {
+  margin: 0.25rem 0 0;
+  color: var(--gray-500, #717680);
+  text-align: left;
+  font-family: "Pretendard", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+}
+
+/* =========================================================
+   6. Bottom Floating Button
+========================================================= */
+.bottom-action {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+.bottom-action__inner {
+  width: 100%;
+  max-width: 28.75rem;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  background: #f1f5f9;
+  border: 0;
+  box-shadow: none;
+}
+.btn-primary {
+  width: 100%;
+  height: 3.5rem;
+  border: 0;
+  border-radius: 0.75rem;
+  background: var(--c-point);
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 600;
+  font-family: "Pretendard", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .bottom-action.is-white {
+  background: #fff;
+  box-shadow: 0 -1px 0 #fff;
+}
+
+.bottom-action.is-slate {
+  background: #f1f5f9;
+  box-shadow: 0 -1px 0 #f1f5f9;
+} */
+
+.bottom-action.is-slate .bottom-action__inner {
+  background: var(--slate-100, #f1f5f9);
+}
+
+.bottom-action.is-white .bottom-action__inner {
+  background: #ffffff;
+}
+
+/* =========================================================
+  교환 불가능 버튼
+========================================================= */
+
+.btn-primary--disabled {
+  background: #dadde2;
+  color: #fcf7e4;
+  pointer-events: none;
+  cursor: default;
+}
+/* =========================================================
+   Coupon Exchange Complete
+========================================================= */
+.detail-complete {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1.5rem 0;
+  box-sizing: border-box;
+}
+
+.detail-complete__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2rem;
+  margin: 0;
+  padding: 0.375rem 0.875rem;
+  border-radius: 999px;
+  background: #e8f5ee;
+  color: var(--c-point);
+  font-family: "Pretendard", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  box-sizing: border-box;
+}
+
+.detail-complete__desc {
+  width: 100%;
+  margin: 0 auto;
+  color: #4b5563;
+  font-family: "Pretendard", sans-serif;
+  font-size: 1rem;
+  line-height: 1.625rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+/* =========================================================
+   7. Missing Nav & Footer Layouts
+========================================================= */
+.nav {
+  background: #fff;
+  border-bottom: 0.0625rem solid var(--gray-200, transparent);
+  padding: 1rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav__list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__left,
+.nav__center,
+.nav__right {
+  display: flex;
+  align-items: center;
+}
+
+.nav__left,
+.nav__right {
+  width: 1.5rem;
+  flex: 0 0 1.5rem;
+}
+
+.nav__back {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.nav__icon {
+  width: 1.125rem;
+  height: 1.125rem;
+  display: block;
+}
+
+.nav__center {
+  flex: 1 1 auto;
+  justify-content: center;
+  min-width: 0;
+}
+
+.nav__title {
+  color: var(--gray-900, #181d27);
+  text-align: center;
+  font-family: var(--pretendard-h1-b-font-family, "Pretendard-Bold", sans-serif);
+  font-size: var(--pretendard-h1-b-font-size, 1rem);
+  line-height: var(--pretendard-h1-b-line-height, 1.5rem);
+  letter-spacing: var(--pretendard-h1-b-letter-spacing, -0.01875rem);
+  font-weight: var(--pretendard-h1-b-font-weight, 700);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nav__spacer {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+}
+
+.footer-sign {
+  padding: 1rem 1.25rem;
+  background: #f1f5f9;
+}
+
+.footer-sign__row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.footer-sign__brand {
+  margin: 0;
+  flex: 1;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+  color: #333333;
+}
+
+.footer-sign__copy {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  color: #999999;
+}
+
+.footer-sign__links {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.footer-sign__links a {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+  color: #333333;
+  text-decoration: none;
+}
+
+.footer-sign.footer-sign--v2 .footer-sign__links {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-sign.footer-sign--v2 .footer-sign__policies {
+  display: flex;
+  gap: 0.4375rem;
+  align-items: center;
+}
+
+.footer-sign.footer-sign--v2 .footer-sign__policy {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  color: #666666;
+  text-decoration: none;
+}
+
+.footer-sign.footer-sign--v2 .footer-sign__policy--strong {
+  font-weight: 700;
+}
+
+.footer-sign.footer-sign--v2 .footer-sign__links {
+  flex-wrap: wrap;
+  row-gap: 0.5rem;
+}
+
+
+/* =========================================================
+   Desktop preview only
+========================================================= */
+@media (min-width: 580px) {
+  #index {
+    box-shadow: 0.1875rem 0.25rem 0.6875rem rgba(0, 0, 0, 0.125);
+  }
+
+  .wrap {
+    width: 28.75rem;
+    /* 460px */
+    margin: 0 auto;
+    height: 100svh;
+    overflow: hidden;
+  }
+
+  .footer-sign {
+    width: 28.75rem;
+    margin: 0 auto;
+  }
+}
+
+/* =========================================================
+   8. Modal (Terms)
+========================================================= */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.modal.is-active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(51, 51, 51, 0.3); /* Dimmed background #333 30% */
+}
+
+.modal__dialog {
+  position: relative;
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem 1rem;
+  width: 100%;
+  max-width: 28.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  z-index: 1001;
+  transform: translateY(1rem);
+  transition: transform 0.3s ease;
+}
+
+.modal.is-active .modal__dialog {
+  transform: translateY(0);
+}
+
+.modal__title {
+  color: var(--gray-800, #252b37);
+  text-align: center;
+  font-family: "Pretendard", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.modal__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.modal-table {
+  background: var(--slate-50, #f8fafc);
+  border-radius: 1rem;
+  border: 0.0625rem solid var(--slate-50, #f8fafc);
+  padding: 1rem 1rem 0.625rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.modal-table__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-table__label {
+  color: var(--slate-800, #1e293b);
+  font-family: "Pretendard", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.modal-table__val {
+  color: var(--gray-600, #535862);
+  font-family: "Pretendard", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.modal__desc {
+  color: var(--gray-800, #252b37);
+  text-align: center;
+  font-family: "Pretendard", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  letter-spacing: -0.01875rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.btn-confirm {
+  background: var(--c-point);
+  border-radius: 0.75rem;
+  padding: 1rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  
+  color: #fcf7e4;
+  font-family: "Pretendard", sans-serif;
+  font-size: 1rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+}
+
+/* =========================================================
+   9. Modal (Exchange Confirm)
+========================================================= */
+.modal__dialog--exchange {
+  max-width: 28.75rem;
+  padding: 2rem 1rem;
+  gap: 1.25rem;
+}
+
+.modal-phone-box {
+  background: var(--slate-50, #f8fafc);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-phone-box__text {
+  color: var(--slate-800, #1e293b);
+  text-align: center;
+  font-family: "Pretendard", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.375rem;
+  letter-spacing: -0.003em;
+  font-weight: 600;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.modal__desc--exchange {
+  line-height: 1.375rem;
+  letter-spacing: -0.01875rem;
+}
+
+.modal__footer--double {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-secondary {
+  background: #dadde2;
+  border-radius: 0.75rem;
+  padding: 1rem 0;
+  width: 6.0625rem; /* 97px */
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+
+  color: #fcf7e4;
+  font-family: "Pretendard", sans-serif;
+  font-size: 1rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+}
+
+.modal__footer--double .btn-confirm {
+  flex: 1;
+}
