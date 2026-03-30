@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+  <link rel="stylesheet" href="css/style-normal.css" type="text/css" />
+  <link rel="stylesheet" href="css/style-plushistory.css" type="text/css" />
+  <title>쇼핑플러스 적립내역</title>
+</head>
+<body>
+  <div id="index" class="index">
+    <div class="wrap">
+      <header class="header">
+          <nav class="nav" aria-label="상단 내비게이션">
+            <ul class="nav__list">
+                <!-- 뒤로가기 -->
+                <li class="nav__left">
+                <a class="nav__back" href="index.html" aria-label="뒤로가기">
+                  <img class="nav__icon" src="imgs/chevron-left.svg" alt="" />
+                </a>
+                </li>
+                <!-- 타이틀 -->
+                <li class="nav__center">
+                <p class="nav__title">적립 내역</p>
+                </li>
+
+                <!-- 우측 여백(아이콘 자리/공백) -->
+                <li class="nav__right" aria-hidden="true">
+                <span class="nav__spacer"></span>
+                </li>
+            </ul>
+        </nav>
+      </header>
+      <main class="content" id="content">
+
+
+<div class="point-history">
+  <!-- ✅ sticky 감지용 sentinel -->
+  <div class="controls-sentinel" aria-hidden="true"></div>
+
+  <!-- ✅ 상단 컨트롤 영역(탭 + month-picker) -->
+  <div class="point-history__controls" id="history-controls">
+    <!-- Segmented Tabs -->
+    <div class="segmented" role="tablist" aria-label="적립/사용 전환">
+      <button type="button" class="segmented__tab is-active" role="tab" aria-selected="true" data-view="earn">
+        적립
+      </button>
+      <button type="button" class="segmented__tab" role="tab" aria-selected="false" data-view="use">
+        사용
+      </button>
+      <span class="segmented__thumb" aria-hidden="true"></span>
+    </div>
+
+    <!-- Month Picker -->
+    <div class="month-picker" aria-label="월 선택">
+      <button type="button"
+              class="month-picker__trigger"
+              aria-label="월 선택 열기"
+              aria-expanded="false"
+              aria-controls="month-sheet"
+              data-month-trigger>
+        <p class="month-picker__ym">
+          <span class="month-picker__year">2026.</span>
+          <span class="month-picker__month">02.</span>
+        </p>
+        <span class="month-picker__icon-hit" aria-hidden="true">
+          <img class="month-picker__icon" src="imgs/chevron-down.svg" alt="" />
+        </span>
+      </button>
+
+      <p class="month-picker__range">(02.01~02.28)</p>
+    </div>
+
+  </div>
+
+<div class="empty-state" role="status" aria-live="polite">
+  <img class="empty-state__icon" src="imgs/nolist.svg" alt="" aria-hidden="true" />
+  <p class="empty-state__text">적립 예정 포인트 내역이 없어요!</p>
+</div>
+
+</div>
+
+
+
+
+
+      </main>
+
+        <section class="footer-notice" aria-label="이용 안내">
+        <h2 class="footer-notice__title">알려드려요</h2>
+
+        <ul class="footer-notice__list">
+            <li>적립 내역은 최대 3개월 보관됩니다.</li>
+            <li>내역의 날짜는 구매 또는 주문일 기준입니다.</li>
+            <li>구매 이후 이용 내역에 반영까지 다소 시간이 소요 될 수 있습니다.</li>
+            <li>구매 후 취소/반품/환불하거나 쇼핑몰의 정책이 변경되면 적립이 취소 되거나 적립 포인트가 변경 될 수 있습니다.</li>
+            <li>적립 한도, 적립율, 적립 시기, 적립 제외 상품 등은 수시로 변경될 수 있습니다.</li>
+        </ul>
+        </section>
+
+
+    </div>
+  </div>
+</body>
+
+<!-- ✅ Bottom Sheet -->
+<div class="sheet" id="month-sheet" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="sheet__dim" data-month-close aria-hidden="true"></div>
+
+  <div class="sheet__panel" role="document" aria-label="조회 기간 선택">
+    <div class="sheet__head">
+      <p class="sheet__title">조회 기간 선택</p>
+
+      <button type="button" class="sheet__close" aria-label="닫기" data-month-close>
+        <img class="sheet__close-icon" src="imgs/xicon-b.svg" alt="" />
+      </button>
+    </div>
+
+    <ul class="sheet__list" role="radiogroup" aria-label="월 목록">
+      <li class="sheet__item">
+        <input class="sheet__radio" id="m-2026-02" name="month" type="radio" checked />
+        <label class="sheet__label" for="m-2026-02">
+          <span class="sheet__label-text">2026년 02월</span>
+          
+        </label>
+      </li>
+
+      <li class="sheet__item">
+        <input class="sheet__radio" id="m-2026-03" name="month" type="radio" />
+        <label class="sheet__label" for="m-2026-03">
+          <span class="sheet__label-text">2026년 03월</span>
+        </label>
+      </li>
+
+      <li class="sheet__item">
+        <input class="sheet__radio" id="m-2026-04" name="month" type="radio" />
+        <label class="sheet__label" for="m-2026-04">
+          <span class="sheet__label-text">2026년 04월</span>
+          
+        </label>
+      </li>
+    </ul>
+
+    <div class="sheet__actions">
+      <button type="button" class="sheet__submit" data-month-apply>선택하기</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ===== Bottom Sheet =====
+const openBtn = document.querySelector("[data-month-trigger]");
+const sheet = document.getElementById("month-sheet");
+const closeEls = sheet?.querySelectorAll("[data-month-close]") || [];
+const applyBtn = sheet?.querySelector("[data-month-apply]");
+
+// 월 표시 영역
+const yearEl = document.querySelector(".month-picker__year");
+const monthEl = document.querySelector(".month-picker__month");
+
+function openSheet(){
+  if (!sheet) return;
+  sheet.classList.add("is-open");
+  sheet.setAttribute("aria-hidden", "false");
+  openBtn?.setAttribute("aria-expanded", "true");
+}
+
+function closeSheet(){
+  if (!sheet) return;
+  sheet.classList.remove("is-open");
+  sheet.setAttribute("aria-hidden", "true");
+  openBtn?.setAttribute("aria-expanded", "false");
+}
+
+function applySelectedMonth(){
+  if (!sheet) return;
+  const checked = sheet.querySelector('input[name="month"]:checked');
+  if (!checked) return;
+
+  const label = sheet.querySelector(`label[for="${checked.id}"] .sheet__label-text`)
+            || sheet.querySelector(`label[for="${checked.id}"]`);
+  const text = (label?.textContent || "").trim();
+  if (!text) return;
+
+  const m = text.match(/(\d{4})\s*년\s*(\d{1,2})\s*월/);
+  if (!m) return;
+
+  if (yearEl) yearEl.textContent = `${m[1]}.`;
+  if (monthEl) monthEl.textContent = `${m[2]}.`;
+}
+
+openBtn?.addEventListener("click", openSheet);
+closeEls.forEach(el => el.addEventListener("click", closeSheet));
+applyBtn?.addEventListener("click", () => {
+  applySelectedMonth();
+  closeSheet();
+});
+
+
+// ===== ✅ Controls sticky 감지 (탭+month-picker 같이) =====
+const controls = document.querySelector(".point-history__controls");
+const controlsSentinel = document.querySelector(".controls-sentinel");
+
+if (controls && controlsSentinel) {
+  const io = new IntersectionObserver(
+    ([entry]) => {
+      controls.classList.toggle("is-stuck", entry.intersectionRatio === 0);
+    },
+    { threshold: [0, 1] }
+  );
+  io.observe(controlsSentinel);
+}
+
+
+// ===== Tabs =====
+const tabsWrap = document.querySelector(".segmented");
+const tabs = document.querySelectorAll(".segmented__tab");
+const panels = document.querySelectorAll("[data-panel]");
+
+function setView(view){
+  tabsWrap?.classList.toggle("is-use", view === "use");
+
+  tabs.forEach(btn => {
+    const active = btn.dataset.view === view;
+    btn.classList.toggle("is-active", active);
+    btn.setAttribute("aria-selected", active ? "true" : "false");
+  });
+
+  panels.forEach(p => {
+    p.hidden = p.dataset.panel !== view;
+  });
+}
+
+tabs.forEach(btn => btn.addEventListener("click", () => setView(btn.dataset.view)));
+setView("earn");
+</script>
+

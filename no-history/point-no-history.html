@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+  <link rel="stylesheet" href="css/style-normal.css" type="text/css" />
+  <link rel="stylesheet" href="css/style-history.css" type="text/css" />
+  <title>쇼핑플러스 적립내역</title>
+</head>
+<body>
+  <div id="index" class="index">
+    <div class="wrap">
+      <header class="header">
+         <nav class="nav" aria-label="상단 내비게이션">
+            <ul class="nav__list">
+                <!-- 뒤로가기 -->
+                <li class="nav__left">
+                <a class="nav__back" href="index.html" aria-label="뒤로가기">
+                  <img class="nav__icon" src="imgs/chevron-left.svg" alt="" />
+                </a>
+                </li>
+                <!-- 타이틀 -->
+                <li class="nav__center">
+                <p class="nav__title">적립 내역</p>
+                </li>
+
+                <!-- 우측 여백(아이콘 자리/공백) -->
+                <li class="nav__right" aria-hidden="true">
+                <span class="nav__spacer"></span>
+                </li>
+            </ul>
+        </nav>
+
+
+      </header>
+      <main class="content" id="content">
+
+        <!-- 상단 요약: 적립 예정 포인트(포인트 내역 데이터 연동 영역) -->
+        <!-- <section class="point-summary" aria-label="적립 예정 포인트 요약">
+        <div class="point-summary__card">
+            <p class="point-summary__label">적립 예정 포인트</p>
+            <p class="point-summary__value">20,260 P</p>
+        </div>
+        </section> -->
+
+
+
+<!-- 적립내역 리스트 영역(월 선택 + 리스트 컨테이너) -->
+<div class="point-history">
+  <!-- 월 선택 (바텀시트 트리거) -->
+  <div class="month-picker-sentinel" aria-hidden="true"></div>
+  <div class="month-picker" aria-label="월 선택">
+    <button type="button" class="month-picker__trigger" aria-label="월 선택 열기" aria-expanded="false" aria-controls="month-sheet" data-month-trigger>
+      <p class="month-picker__ym">
+        <span class="month-picker__year">2026.</span>
+        <span class="month-picker__month">02.</span>
+      </p>
+
+<span class="month-picker__icon-hit" aria-hidden="true">
+  <img class="month-picker__icon" src="imgs/chevron-down.svg" alt="" />
+</span>
+    </button>
+
+
+    <p class="month-picker__range">(02.01~02.28)</p>
+  </div>
+<div class="empty-state" role="status" aria-live="polite">
+  <img class="empty-state__icon" src="imgs/nolist.svg" alt="" aria-hidden="true" />
+  <p class="empty-state__text">적립 예정 포인트 내역이 없어요!</p>
+</div>
+
+</div>
+
+
+<section class="footer-notice" aria-label="이용 안내">
+        <h2 class="footer-notice__title">알려드려요</h2>
+
+        <ul class="footer-notice__list">
+            <li>적립 내역은 최대 3개월 보관됩니다.</li>
+            <li>내역의 날짜는 구매 또는 주문일 기준입니다.</li>
+            <li>구매 이후 이용 내역에 반영까지 다소 시간이 소요 될 수 있습니다.</li>
+            <li>구매 후 취소/반품/환불하거나 쇼핑몰의 정책이 변경되면 적립이 취소 되거나 적립 포인트가 변경 될 수 있습니다.</li>
+            <li>적립 한도, 적립율, 적립 시기, 적립 제외 상품 등은 수시로 변경될 수 있습니다.</li>
+        </ul>
+</section>
+
+
+        
+      </main>
+
+    </div>
+  </div>
+</body>
+
+    <!-- ✅ Bottom Sheet -->
+<div class="sheet" id="month-sheet" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="sheet__dim" data-month-close aria-hidden="true"></div>
+
+  <div class="sheet__panel" role="document" aria-label="조회 기간 선택">
+    <div class="sheet__head">
+      <p class="sheet__title">조회 기간 선택</p>
+
+      <button type="button" class="sheet__close" aria-label="닫기" data-month-close>
+        <img class="sheet__close-icon" src="imgs/xicon-b.svg" alt="" />
+      </button>
+    </div>
+
+    <ul class="sheet__list" role="radiogroup" aria-label="월 목록">
+      <li class="sheet__item">
+        <input class="sheet__radio" id="m-2026-02" name="month" type="radio" checked />
+        <label class="sheet__label" for="m-2026-02">
+          <span class="sheet__label-text">2026년 02월</span>
+          
+        </label>
+      </li>
+
+      <li class="sheet__item">
+        <input class="sheet__radio" id="m-2026-03" name="month" type="radio" />
+        <label class="sheet__label" for="m-2026-03">
+          <span class="sheet__label-text">2026년 03월</span>
+        </label>
+      </li>
+
+      <li class="sheet__item">
+        <input class="sheet__radio" id="m-2026-04" name="month" type="radio" />
+        <label class="sheet__label" for="m-2026-04">
+          <span class="sheet__label-text">2026년 04월</span>
+          
+        </label>
+      </li>
+    </ul>
+
+    <div class="sheet__actions">
+      <button type="button" class="sheet__submit" data-month-apply>선택하기</button>
+    </div>
+  </div>
+</div>
+
+
+<script>
+// 바텀시트
+const openBtn = document.querySelector("[data-month-trigger]");
+const sheet = document.getElementById("month-sheet");
+const closeEls = sheet.querySelectorAll("[data-month-close]");
+const applyBtn = sheet.querySelector("[data-month-apply]");
+
+// 월 표시 영역
+const yearEl = document.querySelector(".month-picker__year");
+const monthEl = document.querySelector(".month-picker__month");
+
+function openSheet(){
+  sheet.classList.add("is-open");
+  sheet.setAttribute("aria-hidden", "false");
+  openBtn?.setAttribute("aria-expanded", "true");
+}
+
+function closeSheet(){
+  sheet.classList.remove("is-open");
+  sheet.setAttribute("aria-hidden", "true");
+  openBtn?.setAttribute("aria-expanded", "false");
+}
+
+// ✅ 선택된 월 텍스트를 트리거에 반영
+function applySelectedMonth(){
+  const checked = sheet.querySelector('input[name="month"]:checked');
+  if (!checked) return;
+
+  // 라벨 텍스트 가져오기 (예: "2026년 2월")
+  const label = sheet.querySelector(`label[for="${checked.id}"] .sheet__label-text`)
+            || sheet.querySelector(`label[for="${checked.id}"]`);
+  const text = (label?.textContent || "").trim(); 
+  if (!text) return;
+
+  // "2026년 2월" -> year: "2026." / month: "2."
+  const m = text.match(/(\d{4})\s*년\s*(\d{1,2})\s*월/);
+  if (!m) return;
+
+  const y = m[1];
+  const mo = m[2];
+
+  if (yearEl) yearEl.textContent = `${y}.`;
+  if (monthEl) monthEl.textContent = `${mo}.`;
+}
+
+openBtn?.addEventListener("click", openSheet);
+closeEls.forEach(el => el.addEventListener("click", closeSheet));
+
+// ✅ 선택하기: 반영 후 닫기
+applyBtn?.addEventListener("click", () => {
+  applySelectedMonth();
+  closeSheet();
+});
+
+ const picker = document.querySelector(".month-picker");
+  const sentinel = document.querySelector(".month-picker-sentinel");
+
+  if (picker && sentinel) {
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        // sentinel이 화면에서 사라지면(=month-picker가 top에 붙기 시작하면) stuck
+        picker.classList.toggle("is-stuck", entry.intersectionRatio === 0);
+      },
+      { threshold: [0, 1] }
+    );
+
+    io.observe(sentinel);
+  }
+
+
+</script>

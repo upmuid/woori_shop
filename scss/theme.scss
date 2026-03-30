@@ -1,0 +1,92 @@
+/* scss/theme.scss */
+
+/* 1) 포인트 컬러 변수(기본=kk) */
+:root{
+  --c-point: #036635;
+  --c-point-bg-soft: #e8f5ee;
+}
+
+/* 2) 매체별 컬러 오버라이드 */
+.media-kk{
+  --c-point: #036635;
+  --c-point-bg-soft: #e8f5ee;
+}
+
+.media-sk {
+  --c-point: #e93828;
+}
+
+.media-kb {
+  --c-point: #ffcc01;
+}
+
+.media-wo {
+  --c-point: #2589F4;
+  --c-point-bg-soft: #faf8f8;
+}
+
+
+
+
+
+
+/* style.css 쪽 */
+.plus-hero__chip{ background: var(--c-point); }
+
+.plus-card__plus,
+.plus-card__value{ color: var(--c-point); }
+
+
+
+.point-banner__strong{
+  color: var(--c-point);
+}
+
+.btn-primary{
+  background-color: var(--c-point);
+}
+
+/* style-shop.css / style-guide.css 공통으로 잡힐 수 있음 */
+.shop-top__rate{ color: var(--c-point); }
+.howto__badge{ color: var(--c-point); }
+.floating-cta__btn{ background: var(--c-point); }
+
+/* history 쪽(earned) */
+.history-item--earned .history-item__sign,
+.history-item--earned .history-item__value,
+.history-item--earned .history-item__unit,
+.history-item--earned .history-item__state{
+  color: var(--c-point);
+}
+
+.sheet__radio:checked + .sheet__label .sheet__label-text {
+    color: var(--c-point);
+}
+
+.sheet__submit {
+    background-color: var(--c-point);
+}
+
+
+
+// 플러스콘
+.product-card__point,
+.product-card__unit{
+  color: var(--c-point);
+}
+.point-box__label--green, .point-box__val--green {
+    color: var(--c-point);
+}
+
+.badge--green{
+    color: var(--c-point);
+}
+
+.btn-confirm{
+    background-color: var(--c-point);
+}
+
+.detail-complete__badge {
+
+  color: var(--c-point);
+}
