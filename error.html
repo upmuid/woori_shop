@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+  <link rel="stylesheet" href="css/style-normal.css" type="text/css" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <link rel="stylesheet" href="css/theme.css" type="text/css" />
+  <title>쇼핑플러스</title>
+</head>
+<body class="media-kk">
+  <div id="index" class="index">
+     <div class="wrap">
+      <header class="header">
+        <!-- 상단 네비게이션 -->
+        <nav class="nav" aria-label="상단 내비게이션">
+            <ul class="nav__list">
+                <!-- 뒤로가기 -->
+                <li class="nav__left">
+                    <a class="nav__back" href="index.html" aria-label="뒤로가기">
+                    <img class="nav__icon" src="imgs/chevron-left.svg" alt="" />
+                    </a>
+                </li>
+
+                <!-- 타이틀 -->
+                <li class="nav__center">
+                <p class="nav__title">SHOPPING +</p>
+                </li>
+
+                <!-- 우측 여백(아이콘 자리/공백) -->
+                <li class="nav__right" aria-hidden="true">
+                <span class="nav__spacer"></span>
+                </li>
+            </ul>
+        </nav>
+
+
+      </header>
+      <main class="content content--error" id="content">
+       
+        <section class="error-view" aria-labelledby="errorTitle">
+            <div class="error-view__inner">
+            <h1 class="error-view__title" id="errorTitle">죄송합니다.</h1>
+            <p class="error-view__desc">요청하신 페이지가 원활하지 않습니다.</p>
+
+            <div class="error-view__box" role="note" aria-label="오류 안내">
+                <p class="error-view__message">
+                창을 닫고 다시 시도해 주시면
+                <br />
+                정상적으로 이용할 수 있습니다.
+                <br />
+                궁금하신 점은 고객센터로 문의해 주세요.
+                </p>
+            </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <!-- 풋터 쇼핑플러스 버전 -->
+        <footer class="footer-sign">
+        <div class="footer-sign__row">
+            <p class="footer-sign__brand">PINCRUX</p>
+            <p class="footer-sign__copy">Copyright PINCRUX. All rights reserved.</p>
+        </div>
+        <div class="footer-sign__links">
+            <a href="#" target="_blank" rel="noopener">이용문의</a>
+        </div>
+        </footer>
+        <!-- 플러스콘 ver 풋터 -->
+        <!-- <footer class="footer-sign footer-sign--v2">
+            <div class="footer-sign__row">
+                <p class="footer-sign__brand">PINCRUX</p>
+                <p class="footer-sign__copy">Copyright PINCRUX. All rights reserved.</p>
+            </div>
+
+            <div class="footer-sign__links">
+                <a href="#" target="_blank" rel="noopener">이용문의</a>
+
+                
+                <div class="footer-sign__policies" aria-label="약관 링크">
+                <a class="footer-sign__policy" href="#" target="_blank" rel="noopener">이용약관</a>
+                <a class="footer-sign__policy footer-sign__policy--strong" href="#" target="_blank" rel="noopener">개인정보처리방침</a>
+                </div>
+            </div>
+            </footer> -->
+      </main>
+     </div>
+  </div>
+</body>
+
+<script>
+
+// 말풍선 열기/닫기 (여러 개 툴팁 공용)
+document.addEventListener("DOMContentLoaded", () => {
+  const triggers = Array.from(document.querySelectorAll("[data-tooltip-trigger]"));
+  if (!triggers.length) return;
+
+  function getParts(trigger) {
+    // 트리거 기준으로 가장 가까운 래퍼를 잡고(없으면 부모로 탐색)
+    const wrap = trigger.closest(".point-card__help-wrap, .plus-card__help-wrap") || trigger.parentElement;
+    if (!wrap) return null;
+
+    const tooltipId = trigger.getAttribute("aria-controls");
+    const tooltip =
+      (tooltipId && document.getElementById(tooltipId)) ||
+      wrap.querySelector(".tooltip-bubble");
+
+    const closeBtn = tooltip ? tooltip.querySelector("[data-tooltip-close]") : null;
+
+    if (!tooltip) return null;
+    return { wrap, trigger, tooltip, closeBtn };
+  }
+
+  function open(parts) {
+    parts.tooltip.hidden = false;
+    parts.trigger.setAttribute("aria-expanded", "true");
+  }
+
+  function close(parts) {
+    parts.tooltip.hidden = true;
+    parts.trigger.setAttribute("aria-expanded", "false");
+  }
+
+  function closeAll(exceptParts = null) {
+    triggers.forEach((t) => {
+      const p = getParts(t);
+      if (!p) return;
+      if (exceptParts && p.tooltip === exceptParts.tooltip) return;
+      close(p);
+    });
+  }
+
+  // 각 트리거에 이벤트 바인딩
+  triggers.forEach((trigger) => {
+    const parts = getParts(trigger);
+    if (!parts) return;
+
+    // 초기 상태 보정
+    parts.trigger.setAttribute("aria-expanded", "false");
+    parts.tooltip.hidden = true;
+
+    trigger.addEventListener("click", (e) => {
+      e.stopPropagation();
+
+      // 다른 툴팁은 닫고, 현재 것만 토글
+      closeAll(parts);
+
+      if (parts.tooltip.hidden) open(parts);
+      else close(parts);
+    });
+
+    parts.closeBtn?.addEventListener("click", (e) => {
+      e.stopPropagation();
+      close(parts);
+    });
+  });
+
+  // 바깥 클릭 시 모두 닫기
+  document.addEventListener("click", () => {
+    closeAll();
+  });
+
+  // ESC로 모두 닫기
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeAll();
+  });
+});
+
+//포인트 배너 닫기
+document.addEventListener("DOMContentLoaded", () => {
+  const banner = document.querySelector(".point-banner");
+  if (!banner) return;
+
+  const closeBtn =
+    banner.querySelector("[data-banner-close]") ||
+    banner.querySelector(".point-banner__close");
+  if (!closeBtn) return;
+
+  closeBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    // 1) 현재 높이를 px로 고정
+    const h = banner.getBoundingClientRect().height;
+    banner.style.height = `${h}px`;
+
+    // 2) 리플로우
+    banner.offsetHeight;
+
+    // 3) padding도 같이 0으로 (✅ 잔상 제거 핵심)
+    banner.style.paddingTop = "0px";
+    banner.style.paddingBottom = "0px";
+
+    // 4) 닫힘 애니메이션 시작
+    banner.classList.add("is-closed");
+    banner.style.height = "0px";
+
+    banner.addEventListener(
+      "transitionend",
+      (ev) => {
+        if (ev.propertyName !== "height") return;
+        banner.remove();
+      },
+      { once: true }
+    );
+  });
+});
+
+
+
+// 배너 슬라이드
+document.addEventListener("DOMContentLoaded", () => {
+  const carousel = document.querySelector(".banner-carousel");
+  if (!carousel) return;
+
+  const slides = Array.from(carousel.querySelectorAll(".banner-carousel__slide"));
+  const dots = Array.from(carousel.querySelectorAll(".banner-carousel__dot"));
+  if (slides.length < 2) return;
+
+  // ✅ 권장: 4~5초 (텍스트 있는 프로모션 배너면 4.5초 무난)
+  const intervalMs = 4500;
+
+  // ✅ CSS transition 시간과 맞춰야 함(슬라이드 transform transition ms)
+  const transitionMs = 320;
+
+  let current = slides.findIndex((s) => s.classList.contains("is-active"));
+  if (current < 0) current = 0;
+
+  let isAnimating = false;
+
+  /** dot 활성/aria-current 동기화 */
+  function updateDots(activeIndex) {
+    if (!dots.length) return;
+
+    dots.forEach((dot, i) => {
+      const on = i === activeIndex;
+      dot.classList.toggle("is-active", on);
+      if (on) dot.setAttribute("aria-current", "true");
+      else dot.removeAttribute("aria-current");
+    });
+  }
+
+  /** 초기 상태: active 1개만 유지 */
+  function initState() {
+    slides.forEach((s, i) => {
+      s.classList.toggle("is-active", i === current);
+      s.classList.remove("is-entering", "is-leaving");
+    });
+    updateDots(current);
+  }
+
+  /** 마지막->첫 점프 시, transition 원복을 위해 초기값 저장 */
+  const originalTransitions = slides.map((s) => s.style.transition);
+
+  /**
+   * 오른쪽 -> 왼쪽 슬라이드 전환
+   * - next: 오른쪽에서 들어옴
+   * - current: 왼쪽으로 나감
+   * - 마지막 -> 첫번째는 애니메이션 없이 점프(깜빡임/난장판 방지)
+   */
+  function goTo(nextIndex) {
+    if (isAnimating) return;
+    if (nextIndex === current) return;
+
+    const lastIndex = slides.length - 1;
+    const isWrapJump = (current === lastIndex && nextIndex === 0);
+
+    isAnimating = true;
+
+    // ✅ dots는 전환 시작 시점에 즉시 반영(딜레이 제거)
+    updateDots(nextIndex);
+
+    const currentSlide = slides[current];
+    const nextSlide = slides[nextIndex];
+
+    // ✅ 마지막 -> 첫: 애니메이션 없이 "툭" 점프
+    if (isWrapJump) {
+      // 1) 상태 정리
+      slides.forEach((s) => {
+        s.classList.remove("is-entering", "is-leaving", "is-active");
+      });
+
+      // 2) transition 잠깐 끄기(깜빡임 방지)
+      slides.forEach((s) => {
+        s.style.transition = "none";
+      });
+
+      // 3) 첫 슬라이드만 활성화
+      nextSlide.classList.add("is-active");
+
+      // 4) 다음 프레임에 transition 원복
+      requestAnimationFrame(() => {
+        slides.forEach((s, idx) => {
+          s.style.transition = originalTransitions[idx] || "";
+        });
+        current = nextIndex;
+        isAnimating = false;
+      });
+
+      return;
+    }
+
+    // ---- 일반 전환 ----
+
+    // 1) next 슬라이드: 진입 준비(오른쪽 대기 상태로)
+    nextSlide.classList.add("is-entering", "is-active");
+
+    // 2) 다음 프레임에서 애니메이션 트리거
+    requestAnimationFrame(() => {
+      currentSlide.classList.add("is-leaving");
+      // CSS에서:
+      // .is-entering.is-active => translateX(0)로 들어오게
+      // .is-leaving => translateX(-100%)로 나가게
+    });
+
+    // 3) transition 종료 후 클래스 정리
+    window.setTimeout(() => {
+      currentSlide.classList.remove("is-active", "is-leaving");
+      nextSlide.classList.remove("is-entering");
+
+      current = nextIndex;
+      isAnimating = false;
+    }, transitionMs + 30);
+  }
+
+  /** 다음 슬라이드로 */
+  function next() {
+    goTo((current + 1) % slides.length);
+  }
+
+  // 초기화 + 자동 시작
+  initState();
+  window.setInterval(next, intervalMs);
+});
+
+// 포인트값 인터렉션
+function animateCountUp(el, opts = {}) {
+  if (!el) return;
+
+  const duration = opts.duration ?? 2000;
+  const prefersReduced = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+
+  // ✅ 타겟은 dataset에 저장된 값을 우선 사용 (없으면 현재 텍스트에서 읽음)
+  const raw = (el.dataset.target ?? el.textContent ?? "").trim();
+  const parsed = Number(raw.replace(/[^0-9-]/g, ""));
+  const target = Number.isFinite(parsed) ? Math.max(0, parsed) : 0;
+
+  if (prefersReduced) {
+    el.textContent = target.toLocaleString("ko-KR");
+    return;
+  }
+
+  const startValue = 0;
+  const startTime = performance.now();
+
+  function tick(now) {
+    const t = Math.min(1, (now - startTime) / duration);
+    const eased = 1 - Math.pow(1 - t, 3);
+    const current = Math.floor(startValue + (target - startValue) * eased);
+    el.textContent = current.toLocaleString("ko-KR");
+    if (t < 1) requestAnimationFrame(tick);
+  }
+
+  el.textContent = "0";
+  requestAnimationFrame(tick);
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  const els = document.querySelectorAll(".point-card__value, .plus-hero__value");
+
+  // ✅ 1) 현재 퍼블 값(예: 99,999,999)을 dataset으로 백업
+  els.forEach((el) => {
+    const raw = (el.textContent || "").trim();
+    el.dataset.target = raw; // 나중에 animateCountUp에서 target으로 사용
+    el.textContent = "0";    // ✅ 화면은 처음부터 0
+  });
+
+  // ✅ 2) 다음 프레임에 애니메이션 시작
+  requestAnimationFrame(() => {
+    els.forEach((el) => animateCountUp(el, { duration: 2000 }));
+  });
+});
+
+
+
+
+</script>

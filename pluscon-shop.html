@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+  <link rel="stylesheet" href="css/style-normal.css" type="text/css" />
+  <link rel="stylesheet" href="css/style-pluscon-shop.css" type="text/css" />
+  <link rel="stylesheet" href="css/theme.css" type="text/css" />
+  <title>플러스콘</title>
+</head>
+
+<body class="media-wo">
+  <div id="index" class="index">
+    <div class="wrap">
+      <header class="header">
+        <!-- 상단 네비게이션 -->
+        <nav class="nav" aria-label="상단 내비게이션">
+          <ul class="nav__list">
+            <!-- 뒤로가기 -->
+            <li class="nav__left">
+              <a class="nav__back" href="index.html" aria-label="뒤로가기">
+                <img class="nav__icon" src="imgs/chevron-left.svg" alt="" />
+              </a>
+            </li>
+
+            <!-- 타이틀 -->
+            <li class="nav__center">
+              <p class="nav__title">플러스콘</p>
+            </li>
+
+            <!-- 우측 여백 -->
+            <li class="nav__right" aria-hidden="true">
+              <span class="nav__spacer"></span>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- 상단 포인트 영역 -->
+        <section class="point-summary" aria-label="포인트 요약">
+          <div class="point-card">
+            <div class="point-card__head">
+              <div class="point-card__title-row">
+                <p class="point-card__title">보유 중인 포인트</p>
+              </div>
+            </div>
+
+            <div class="point-card__body">
+              <div class="point-card__amount">
+                <!-- 포인트 변경 최대 99,999,999 -->
+                <p class="point-card__value">99,999,999</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </header>
+
+      <main class="content" id="content">
+<!-- 카테고리 기능 적용시 아래 버튼 추가 해서 사용-->
+        <section class="pluscon-category" aria-label="카테고리">
+          <div class="pluscon-category__scroll">
+            <button type="button" class="pluscon-category__chip is-active">전체</button>
+            <button type="button" class="pluscon-category__chip">커피/음료</button>
+            <button type="button" class="pluscon-category__chip">치킨/피자</button>
+            <button type="button" class="pluscon-category__chip">패스트푸드</button>
+            <button type="button" class="pluscon-category__chip">기타</button>
+            <button type="button" class="pluscon-category__chip">기타</button>
+            <button type="button" class="pluscon-category__chip">기타</button>
+          </div>
+        </section>
+
+
+
+        <!-- 상품 리스트 -->
+        <section class="shop-section" aria-label="상품 리스트">
+          <div class="shop-section__head">
+            <p class="shop-section__title">마음에 드는 상품으로 교환하세요.</p>
+
+            <div class="view-toggle" role="group" aria-label="상품 보기 방식 선택">
+              <button type="button" class="view-toggle__btn is-active" aria-label="그리드 보기" data-view="grid">
+                <img class="view-toggle__icon" src="imgs/grid-view-active.svg" alt="" data-default="imgs/grid-view.svg"
+                  data-active="imgs/grid-view-active.svg" />
+              </button>
+
+              <button type="button" class="view-toggle__btn" aria-label="리스트 보기" data-view="list">
+                <img class="view-toggle__icon" src="imgs/grid-list.svg" alt="" data-default="imgs/grid-list.svg"
+                  data-active="imgs/grid-list-active.svg" />
+              </button>
+            </div>
+          </div>
+
+          <ul class="product-list product-list--grid" aria-label="플러스콘 상품 목록">
+            <li class="product-list__item">
+              <a href="pluscon-detail.html" class="product-card" aria-label="버거킹 콰트로치즈와퍼세트 상세 보기">
+                <div class="product-card__thumb">
+                  <img class="product-card__img" src="imgs/product/b.png" alt="버거킹 콰트로치즈와퍼세트" />
+                </div>
+
+                <div class="product-card__content">
+                  <p class="product-card__brand">버거킹</p>
+
+                  <div class="product-card__info">
+                    <p class="product-card__name">버거킹 콰트로치즈와퍼세트 콰트로치즈와퍼세트콰트로치즈와퍼세트</p>
+
+                    <div class="product-card__price">
+                      <span class="product-card__point">10,000</span>
+                      <span class="product-card__unit">P</span>
+                    </div>
+                  </div>
+                </div>
+
+                <img class="product-card__arrow" src="imgs/pluscon-right.svg" alt="" aria-hidden="true" />
+              </a>
+            </li>
+
+            <li class="product-list__item">
+              <a href="#" class="product-card" aria-label="메가커피 ICE 아메리카노 상세 보기">
+                <div class="product-card__thumb">
+                  <img class="product-card__img" src="imgs/product/ice.png" alt="메가커피 ICE 아메리카노" />
+                </div>
+
+                <div class="product-card__content">
+                  <p class="product-card__brand">메가커피</p>
+
+                  <div class="product-card__info">
+                    <p class="product-card__name">ICE 아메리카노</p>
+
+                    <div class="product-card__price">
+                      <span class="product-card__point">10,000</span>
+                      <span class="product-card__unit">P</span>
+                    </div>
+                  </div>
+                </div>
+
+                <img class="product-card__arrow" src="imgs/pluscon-right.svg" alt="" aria-hidden="true" />
+              </a>
+            </li>
+
+            <li class="product-list__item">
+              <a href="#" class="product-card" aria-label="메가커피 ICE 큐브라떼 상세 보기">
+                <div class="product-card__thumb">
+                  <img class="product-card__img" src="imgs/product/cube.png" alt="메가커피 ICE 큐브라떼" />
+                </div>
+
+                <div class="product-card__content">
+                  <p class="product-card__brand">메가커피</p>
+
+                  <div class="product-card__info">
+                    <p class="product-card__name">ICE 큐브라떼</p>
+
+                    <div class="product-card__price">
+                      <span class="product-card__point">10,000</span>
+                      <span class="product-card__unit">P</span>
+                    </div>
+                  </div>
+                </div>
+
+                <img class="product-card__arrow" src="imgs/pluscon-right.svg" alt="" aria-hidden="true" />
+              </a>
+            </li>
+
+            <li class="product-list__item">
+              <a href="#" class="product-card" aria-label="메가커피 ICE 딸기라떼 상세 보기">
+                <div class="product-card__thumb">
+                  <img class="product-card__img" src="imgs/product/s.png" alt="메가커피 ICE 딸기라떼" />
+                </div>
+
+                <div class="product-card__content">
+                  <p class="product-card__brand">메가커피메가커피메가커피메가커피</p>
+
+                  <div class="product-card__info">
+                    <p class="product-card__name">ICE 딸기라떼ICE 딸기라떼ICE 딸기라떼ICE 딸기라떼</p>
+
+                    <div class="product-card__price">
+                      <span class="product-card__point">10,000</span>
+                      <span class="product-card__unit">P</span>
+                    </div>
+                  </div>
+                </div>
+
+                <img class="product-card__arrow" src="imgs/pluscon-right.svg" alt="" aria-hidden="true" />
+              </a>
+            </li>
+
+            <li class="product-list__item">
+              <a href="#" class="product-card" aria-label="BBQ 양념치킨 플러스 콜라 1.25L 상세 보기">
+                <div class="product-card__thumb">
+                  <img class="product-card__img" src="imgs/product/bbq.png" alt="BBQ 양념치킨 콜라 1.25L" />
+                </div>
+
+                <div class="product-card__content">
+                  <p class="product-card__brand">BBQ</p>
+
+                  <div class="product-card__info">
+                    <p class="product-card__name">양념치킨+콜라1.25L</p>
+
+                    <div class="product-card__price">
+                      <span class="product-card__point">10,000</span>
+                      <span class="product-card__unit">P</span>
+                    </div>
+                  </div>
+                </div>
+
+                <img class="product-card__arrow" src="imgs/pluscon-right.svg" alt="" aria-hidden="true" />
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- 플러스콘 footer -->
+        <footer class="footer-sign footer-sign--v2">
+          <div class="footer-sign__row">
+            <p class="footer-sign__brand">PINCRUX</p>
+            <p class="footer-sign__copy">Copyright PINCRUX. All rights reserved.</p>
+          </div>
+
+          <div class="footer-sign__links">
+            <a href="#" target="_blank" rel="noopener">이용문의</a>
+
+            <div class="footer-sign__policies" aria-label="약관 링크">
+              <a class="footer-sign__policy" href="#" target="_blank" rel="noopener">이용약관</a>
+              <a class="footer-sign__policy footer-sign__policy--strong" href="#" target="_blank" rel="noopener">
+                개인정보처리방침
+              </a>
+            </div>
+          </div>
+        </footer>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    function animateCountUp(el, opts = {}) {
+      if (!el) return;
+
+      const duration = opts.duration ?? 2000;
+      const prefersReduced =
+        window.matchMedia &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      const raw = (el.dataset.target ?? el.textContent ?? "").trim();
+      const parsed = Number(raw.replace(/[^0-9-]/g, ""));
+      const target = Number.isFinite(parsed) ? Math.max(0, parsed) : 0;
+
+      if (prefersReduced) {
+        el.textContent = target.toLocaleString("ko-KR");
+        return;
+      }
+
+      const startValue = 0;
+      const startTime = performance.now();
+
+      function tick(now) {
+        const t = Math.min(1, (now - startTime) / duration);
+        const eased = 1 - Math.pow(1 - t, 3);
+        const current = Math.floor(startValue + (target - startValue) * eased);
+
+        el.textContent = current.toLocaleString("ko-KR");
+
+        if (t < 1) {
+          requestAnimationFrame(tick);
+        }
+      }
+
+      el.textContent = "0";
+      requestAnimationFrame(tick);
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const els = document.querySelectorAll(".point-card__value");
+
+      els.forEach((el) => {
+        const raw = (el.textContent || "").trim();
+        el.dataset.target = raw;
+        el.textContent = "0";
+      });
+
+      requestAnimationFrame(() => {
+        els.forEach((el) => animateCountUp(el, { duration: 2000 }));
+      });
+    });
+
+
+    // 카테고리 마우스 드래그 스와이프 및 클릭
+    const categoryChips = document.querySelectorAll('.pluscon-category__chip');
+    const categoryContainer = document.querySelector('.pluscon-category');
+
+    let isDown = false;
+    let isDragged = false;
+    let startX;
+    let scrollLeft;
+
+    if (categoryContainer) {
+      categoryContainer.addEventListener('mousedown', (e) => {
+        isDown = true;
+        isDragged = false;
+        startX = e.pageX - categoryContainer.offsetLeft;
+        scrollLeft = categoryContainer.scrollLeft;
+      });
+
+      categoryContainer.addEventListener('mouseleave', () => {
+        isDown = false;
+      });
+
+      categoryContainer.addEventListener('mouseup', () => {
+        isDown = false;
+      });
+
+      categoryContainer.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault(); // 기본 텍스트 드래그(선택) 방지
+
+        const x = e.pageX - categoryContainer.offsetLeft;
+        const walk = (x - startX) * 1.5; // 스크롤 민감도
+
+        if (Math.abs(walk) > 5) {
+          isDragged = true; // 약간이라도 움직이면 드래그로 판정
+        }
+        categoryContainer.scrollLeft = scrollLeft - walk;
+      });
+    }
+
+    categoryChips.forEach((chip) => {
+      chip.addEventListener('click', (e) => {
+        if (isDragged) {
+          e.preventDefault(); // 스와이프 도중 실수로 클릭되는 현상 방지
+          return;
+        }
+        categoryChips.forEach((el) => el.classList.remove('is-active'));
+        chip.classList.add('is-active');
+      });
+    });
+
+    // 바둑판 & 리스트 형식 선택
+
+    const viewButtons = document.querySelectorAll(".view-toggle__btn");
+    const productList = document.querySelector(".product-list");
+
+    viewButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const view = button.dataset.view;
+
+        viewButtons.forEach((btn) => {
+          btn.classList.remove("is-active");
+
+          const icon = btn.querySelector(".view-toggle__icon");
+          if (icon) icon.src = icon.dataset.default;
+        });
+
+        button.classList.add("is-active");
+
+        const activeIcon = button.querySelector(".view-toggle__icon");
+        if (activeIcon) activeIcon.src = activeIcon.dataset.active;
+
+        productList.classList.remove("product-list--grid", "product-list--list");
+        productList.classList.add(`product-list--${view}`);
+      });
+    });
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+  <link rel="stylesheet" href="css/style-normal.css" type="text/css" />
+  <link rel="stylesheet" href="css/style-shop.css" type="text/css" />
+  <link rel="stylesheet" href="css/theme.css" type="text/css" />
+  <title>쇼핑몰 상세페이지</title>
+</head>
+
+<body class="media-wo">
+  <div id="index" class="index">
+    <div class="wrap">
+      <header class="header">
+        <nav class="nav" aria-label="상단 내비게이션">
+          <ul class="nav__list">
+            <!-- 뒤로가기 -->
+            <li class="nav__left">
+              <a class="nav__back" href="index.html" aria-label="뒤로가기">
+                <img class="nav__icon" src="imgs/chevron-left.svg" alt="" />
+              </a>
+            </li>
+
+
+            <!-- 타이틀 -->
+            <li class="nav__center">
+              <!-- 매체별 타이틀 변경 -->
+              <p class="nav__title">쿠팡 안내</p>
+            </li>
+
+
+
+
+            <!-- 우측 여백(아이콘 자리/공백) -->
+            <li class="nav__right" aria-hidden="true">
+              <span class="nav__spacer"></span>
+            </li>
+          </ul>
+        </nav>
+        <section class="shop-top" aria-label="제휴 쇼핑몰 요약">
+          <!--서비스 이용동의 철회 버튼 여기 누르면 철회 기능 호출 // 영역 일부러 작게 잡음-->
+
+          <!-- <button type="button" class="info" aria-label="이용동의 철회">
+            <img src="imgs/info.svg" alt="" aria-hidden="true" />
+            <span>이용동의 철회</span>
+          </button> -->
+          <!--서비스 이용동의 철회 버튼-->
+          <div class="shop-top__text">
+            <!-- 매체별 타이틀 & 적립률 변경 -->
+            <p class="shop-top__mall">쿠팡 </p>
+            <p class="shop-top__rate">결제금액의 2% 적립!</p>
+          </div>
+        </section>
+      </header>
+      <main class="content" id="content">
+        <section class="howto" aria-label="캐시 받는 방법">
+          <header class="howto__head">
+            <p class="howto__title">꿀머니 받는 방법</p>
+          </header>
+
+          <!-- 포인트 받는 방법 -->
+          <div class="howto__body">
+            <div class="howto__item">
+              <div class="howto__step">
+                <span class="howto__badge">1</span>
+                <span class="howto__line" aria-hidden="true"></span>
+              </div>
+              <div class="howto__text-wrap">
+                <p class="howto__item-title">쿠팡 쇼핑하러가기 버튼 터치하기</p>
+                <p class="howto__item-desc">쿠팡을 눌러서 쇼핑몰로 이동하세요.</p>
+              </div>
+            </div>
+
+            <div class="howto__item">
+              <div class="howto__step">
+                <span class="howto__badge">2</span>
+                <span class="howto__line" aria-hidden="true"></span>
+              </div>
+              <div class="howto__text-wrap">
+                <p class="howto__item-title">쿠팡에서 쇼핑하기</p>
+                <p class="howto__item-desc">쿠팡을 통해서 들어간 후 즐거운 쇼핑하세요.</p>
+              </div>
+            </div>
+
+            <div class="howto__item">
+              <div class="howto__step">
+                <span class="howto__badge howto__badge--done" aria-hidden="true">
+                  <img class="howto__check" src="imgs/1f389@2x.png" alt="" />
+                </span>
+              </div>
+              <div class="howto__text-wrap">
+                <p class="howto__item-title">적립 완료!</p>
+                <p class="howto__item-desc">
+                  <span class="howto__emph">결제일 기준 다음 달 말 일</span> 적립해드려요.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="cta-block" aria-label="적립 내역 안내">
+            <a class="cta-block__btn" href="point-history.html" aria-label="적립 내역으로 이동">
+              <p class="cta-block__btn-text">적립 내역</p>
+            </a>
+            <p class="cta-block__desc">*적립 내역은 구매 혹은 구매 확정 후 1시간 이내 반영됩니다.</p>
+          </div>
+
+        </section>
+
+        <!-- <section class="recommend" aria-label="추천 상품">
+          <div class="recommend__header">
+            <p class="recommend__title">이런 상품은 어떠세요?</p>
+          </div>
+          <div class="recommend__list-wrap">
+            <ul class="recommend__list">
+              <li class="recommend__item">
+                <a href="#" class="recommend__link">
+                  <div class="recommend__thumb">
+                    <img src="imgs/product/Layer 1.png" alt="에이수스 2025 TUF GAMING" />
+                  </div>
+                  <div class="recommend__info">
+                    <p class="recommend__name">에이수스 2025 TUF GAMING</p>
+                    <p class="recommend__price">1,899,000원</p>
+                    <img src="imgs/rocket.png" alt="로켓배송" class="recommend__rocket" />
+                  </div>
+                </a>
+              </li>
+              <li class="recommend__item">
+                <a href="#" class="recommend__link">
+                  <div class="recommend__thumb">
+                    <img src="imgs/product/Layer 1.png" alt="에이수스 2025 TUF GAMING" />
+                  </div>
+                  <div class="recommend__info">
+                    <p class="recommend__name">에이수스 2025 TUF GAMING</p>
+                    <p class="recommend__price">1,899,000원</p>
+                    <img src="imgs/rocket.png" alt="로켓배송" class="recommend__rocket" />
+                  </div>
+                </a>
+              </li>
+              <li class="recommend__item">
+                <a href="#" class="recommend__link">
+                  <div class="recommend__thumb">
+                    <img src="imgs/product/Layer 1.png" alt="에이수스 2025 TUF GAMING" />
+                  </div>
+                  <div class="recommend__info">
+                    <p class="recommend__name">에이수스 2025 TUF GAMING</p>
+                    <p class="recommend__price">1,799,000원</p>
+                    <img src="imgs/rocket.png" alt="로켓배송" class="recommend__rocket" />
+                  </div>
+                </a>
+              </li>
+              <li class="recommend__item">
+                <a href="#" class="recommend__link">
+                  <div class="recommend__thumb">
+                    <img src="imgs/product/Layer 1.png" alt="에이수스 2025 TUF GAMING" />
+                  </div>
+                  <div class="recommend__info">
+                    <p class="recommend__name">에이수스 2025 TUF GAMING</p>
+                    <p class="recommend__price">1,899,000원</p>
+                    <img src="imgs/rocket.png" alt="로켓배송" class="recommend__rocket" />
+                  </div>
+                </a>
+              </li>
+              <li class="recommend__item">
+                <a href="#" class="recommend__link">
+                  <div class="recommend__thumb">
+                    <img src="imgs/product/Layer 1.png" alt="에이수스 2025 TUF GAMING" />
+                  </div>
+                  <div class="recommend__info">
+                    <p class="recommend__name">에이수스 2025 TUF GAMING</p>
+                    <p class="recommend__price">1,799,000원</p>
+                    <img src="imgs/rocket.png" alt="로켓배송" class="recommend__rocket" />
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section> -->
+
+        <section class="policy" aria-label="적립 기준 안내">
+          <!-- <div class="policy-card">
+            <div class="policy-card__head">
+              <img class="policy-card__icon" src="imgs/icon-earn.svg" alt="" aria-hidden="true" />
+              <p class="policy-card__title">적립 항목</p>
+            </div>
+
+            <ul class="policy-card__list">
+              <li>호텔 예약 시 적립</li>
+              <li>적립 가능한 항목이 있을 경우 해당 내용이 노출 됩니다.</li>
+            </ul>
+          </div> -->
+
+          <div class="policy-card">
+            <div class="policy-card__head">
+              <img class="policy-card__icon" src="imgs/icon-no-earn.svg" alt="" aria-hidden="true" />
+              <p class="policy-card__title">적립 불가 항목</p>
+            </div>
+            <ul class="policy-card__list">
+              <li>기프트 카드, 소프트웨어 등 가상/디지털 상품</li>
+              <li>애플, 삼성 갤럭시 관련 제품 일체(스마트폰, 태블릿 PC 등)</li>
+              <li>유상으로 제공되는 제품 보증 서비스(쿠팡 안심케어, AppleCare+ 등)</li>
+              <li>적립 불가 항목이 있을 경우 해당 내용이 노출 됩니다.</li>
+            </ul>
+          </div>
+        </section>
+        <section class="policy-notice" aria-label="유의사항">
+          <div class="policy-card">
+            <div class="policy-notice__head">
+              <p class="policy-notice__title">유의사항</p>
+              <p class="policy-notice__sub">원활한 적립을 위해 아래 유의사항을 꼭 확인해 주세요.</p>
+            </div>
+
+            <ul class="policy-card__list policy-notice__list">
+              <li>구매금액 기준은 포인트, 할인쿠폰 등을 차감한 실 결제 금액 기준입니다.</li>
+              <li>리셀러성 대량 구매, 광고 차단 프로그램 사용, 추적 미허용(쿠키 미동의) 환경에서는 적립이 제외됩니다.</li>
+              <li>대량구매의 경우 쇼핑몰, 제품별 구매기준이 다를 수 있으며 혜택이 최종 지급되기 전에 취소될 수 있습니다.</li>
+              <li>리셀러성 대량구매 예시: 단일 품목에 대해 일반적인 가계 소비 범위를 초과하는 수량 구매 (예: 동일상품 10개 이상 등),
+                1시간 내 10회 이상 구매</li>
+              <li>동일 주문 내 일부 상품만 환불하셔도 해당 주문의 모든 적립금은 회수됩니다.</li>
+              <li>구매 확정 후 1시간 이내에 적립 이력이 확인되지 않으면 문의하기를 통해 구매 상품명, 주문번호, 구매일시 등 주문정보를 포함해 문의해주세요.</li>
+              <li>지급 제외 항목이 아님이 확실한 경우 구매영수증, 구매일시, 구매상품명을 포함에 문의해주세요.</li>
+            </ul>
+          </div>
+        </section>
+        <!-- <footer class="footer-sign">
+                <div class="footer-sign__row">
+                <p class="footer-sign__brand">PINCRUX</p>
+                <p class="footer-sign__copy">Copyright PINCRUX. All rights reserved.</p>
+                </div>
+                <div class="footer-sign__links">
+                <a href="#" target="_blank" rel="noopener">이용문의</a>
+                </div>
+            </footer> -->
+        <footer class="footer-sign footer-sign--v2">
+          <div class="footer-sign__row">
+            <p class="footer-sign__brand">PINCRUX</p>
+            <p class="footer-sign__copy">Copyright PINCRUX. All rights reserved.</p>
+          </div>
+
+          <div class="footer-sign__links">
+            <a href="#" target="_blank" rel="noopener">이용문의</a>
+
+
+            <div class="footer-sign__policies" aria-label="약관 링크">
+              <a class="footer-sign__policy" href="#" target="_blank" rel="noopener">이용약관</a>
+              <a class="footer-sign__policy footer-sign__policy--strong" href="#" target="_blank"
+                rel="noopener">개인정보처리방침</a>
+            </div>
+          </div>
+        </footer>
+        <!-- 플로팅 버튼 -->
+        <div class="floating-cta" role="region" aria-label="쇼핑하러 가기">
+          <div class="floating-cta__inner">
+            <a class="floating-cta__btn" href="#" aria-label="쿠팡 쇼핑하러 가기">
+              <span class="floating-cta__text">
+                <span class="floating-cta__target">N+스토어 추천 브랜드</span>
+                <span>쇼핑하러 가기</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </main>
+
+
+
+    </div>
+
+  </div>
+</body>

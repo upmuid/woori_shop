@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+
+  <link rel="stylesheet" href="css/style-normal.css" type="text/css" />
+  <link rel="stylesheet" href="css/style-pluscon-detail.css" type="text/css" />
+  <link rel="stylesheet" href="css/theme.css" type="text/css" />
+
+  <title>플러스콘 상세페이지</title>
+</head>
+
+<body class="media-wo">
+  <div id="index" class="index">
+    <div class="wrap wrap--flex">
+      <header class="header">
+        <nav class="nav" aria-label="상단 내비게이션">
+          <ul class="nav__list">
+            <li class="nav__left">
+              <a class="nav__back" href="pluscon-shop.html" aria-label="뒤로가기">
+                <img class="nav__icon" src="imgs/chevron-left.svg" alt="" />
+              </a>
+            </li>
+            <li class="nav__center">
+              <p class="nav__title">플러스콘</p>
+            </li>
+            <li class="nav__right" aria-hidden="true">
+              <span class="nav__spacer"></span>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main class="content content--flex" id="content">
+        <!-- 쿠폰 교환 화면 -->
+        <div class="detail-state detail-state--default">
+          <section class="detail-title">
+            <p class="detail-title__brand">메가커피</p>
+            <h1 class="detail-title__name">ICE 아메리카노</h1>
+          </section>
+
+          <section class="detail-image">
+            <div class="detail-image__box">
+              <img src="imgs/product/ice.png" alt="ICE 아메리카노" />
+            </div>
+          </section>
+          <section class="detail-point">
+            <div class="point-box">
+              <div class="point-box__top">
+                <div class="point-box__row">
+                  <p class="point-box__label">필요한 포인트</p>
+                  <p class="point-box__val">20,000</p>
+                </div>
+                <div class="point-box__row">
+                  <p class="point-box__label point-box__label--gray">보유한 포인트</p>
+                  <div class="point-box__val-group">
+                    <span class="badge badge--green">구매 가능</span>
+                    <p class="point-box__val point-box__val--gray">100,000</p>
+                  </div>
+                </div>
+              </div>
+              <div class="point-box__bottom">
+                <p class="point-box__label point-box__label--green">교환 후 포인트</p>
+                <p class="point-box__val point-box__val--green">80,000</p>
+              </div>
+            </div>
+          </section>
+          <section class="detail-form">
+            <h2 class="detail-form__title">
+              모바일 쿠폰을 받으실<br />
+              휴대폰 번호를 입력해주세요.
+            </h2>
+
+            <div class="input-group">
+              <input type="tel" class="input-text" placeholder="01012345678" />
+            </div>
+
+            <div class="agree-row">
+              <label class="agree-row__check">
+                <input type="checkbox" class="checkbox-agree__input" />
+                <div class="checkbox-agree__custom"></div>
+              </label>
+              <button type="button" class="agree-row__btn js-open-terms">
+                <span>휴대폰번호 수집 및 이용 동의</span>
+                <img src="imgs/pluscon-right.svg" alt="약관 보기" />
+              </button>
+            </div>
+          </section>
+        </div>
+
+        <!-- 교환 불가 화면 -->
+
+        <!-- <div class="detail-state detail-state--disabled is-hidden">
+    <section class="detail-title">
+      <p class="detail-title__brand">메가커피</p>
+      <h1 class="detail-title__name">ICE 아메리카노</h1>
+    </section>
+
+    <section class="detail-image">
+      <div class="detail-image__box">
+        <img src="imgs/product/ice.png" alt="ICE 아메리카노" />
+      </div>
+    </section>
+
+    <section class="detail-point">
+      <div class="point-box point-box--disabled">
+        <div class="point-box__top">
+          <div class="point-box__row">
+            <p class="point-box__label">필요한 포인트</p>
+            <p class="point-box__val">20,000</p>
+          </div>
+
+          <div class="point-box__row">
+            <p class="point-box__label point-box__label--gray">보유한 포인트</p>
+            <div class="point-box__val-group">
+              <span class="badge badge--red">포인트 부족</span>
+              <p class="point-box__val point-box__val--gray">10,000</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="point-box__bottom">
+          <p class="point-box__label point-box__label--red">부족한 포인트</p>
+          <p class="point-box__val point-box__val--red">10,000</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-form detail-form--disabled">
+      <h2 class="detail-form__title">
+        모바일 쿠폰을 받으실<br />
+        휴대폰 번호를 입력해주세요.
+      </h2>
+
+      <p class="detail-form__notice">포인트가 부족하여 현재는 교환할 수 없어요.</p>
+
+      <div class="input-group">
+        <input type="tel" class="input-text" placeholder="01012345678" disabled />
+      </div>
+
+      <div class="agree-row agree-row--disabled">
+        <label class="agree-row__check">
+          <input type="checkbox" class="checkbox-agree__input" disabled />
+          <div class="checkbox-agree__custom"></div>
+        </label>
+
+        <button type="button" class="agree-row__btn" disabled>
+          <span>휴대폰번호 수집 및 이용 동의</span>
+          <img src="imgs/pluscon-right.svg" alt="" />
+        </button>
+      </div>
+    </section> 
+  </div> -->
+
+
+        <!-- 쿠폰 교환 완료 화면 -->
+        <!-- <div class="detail-state detail-state--complete ">
+          <section class="detail-complete">
+            <p class="detail-complete__badge">쿠폰 교환 완료</p>
+
+
+          </section>
+          <section class="detail-title">
+            <p class="detail-title__brand">메가커피</p>
+            <h1 class="detail-title__name">ICE 아메리카노</h1>
+          </section>
+
+          <section class="detail-image">
+            <div class="detail-image__box">
+              <img src="imgs/product/ice.png" alt="ICE 아메리카노" />
+            </div>
+          </section>
+
+          <section class="detail-point">
+            <div class="point-box">
+              <div class="point-box__top">
+                <div class="point-box__row">
+                  <p class="detail-complete__desc">교환하신 쿠폰은 휴대폰 번호로 문자 전송되며 <br>각 쿠폰 사용처에서 사용 하실 수 있습니다.</p>
+
+                </div>
+
+              </div>
+            </div>
+          </section>
+        </div>  -->
+
+
+
+        <!-- 5. 하단 안내문 -->
+        <section class="detail-notice">
+          <p class="detail-notice__title">알려드려요</p>
+          <div class="detail-notice__content">
+            <p class="detail-notice__item">
+              모바일 쿠폰은 반드시 유효기간 내에 사용하셔야 합니다.
+              (모바일 쿠폰 유효기간 연장 및 환불/재발행 불가) <br />
+              교환하신 모바일 쿠폰은 입력하신 휴대폰 번호의 문자메시지로 발송됩니다.<br />
+              [유의사항]<br />
+              상품 구매 취소 시 포인트가 지급되지 않거나 회수될 수 있습니다. 취소가 반복될 경우 재참여가 제한될 수 있습니다.<br />
+              다른 제휴사에서 ‘쇼핑하러 가기’를 경유한 경우에는 포인트 적립 대상에서 제외됩니다.<br />
+              해당 프로모션은 쇼핑몰 광고의 중개이며 쇼핑몰에서 판매하는 상품 또는 적립 여부에 책임이 없습니다.<br />
+              광고 차단 어플리케이션 또는 서버 우회 등의 방법을 이용하여 접속 시 제외될 수 있습니다.<br />
+              [사용장소]<br />
+              -메가커피 오프라인 매장에서 사용 가능합니다.<br />
+              -일부 매장에서는 사용이 제한될 수 있습니다.<br />
+            </p>
+          </div>
+        </section>
+
+        <!-- 교환 완료 안내문 -->
+        <!-- <section class="detail-notice">
+  <p class="detail-notice__title">알려드려요</p>
+
+  <div class="detail-notice__content">
+<p class="detail-notice__item">
+  · 모바일 쿠폰은 반드시 유효기간 내에 사용하셔야 합니다.(모바일 쿠폰 유효기간 연장 및 환불/재발행 불가)<br />
+  · 교환하신 모바일 쿠폰은 입력하신 휴대폰 번호의 문자메시지로 발송됩니다.
+</p>
+  </div>
+</section> -->
+
+        <!-- 푸터 (기존 플러스콘 Footer 재사용) -->
+        <footer class="footer-sign footer-sign--v2">
+          <div class="footer-sign__row">
+            <p class="footer-sign__brand">PINCRUX</p>
+            <p class="footer-sign__copy">Copyright PINCRUX. All rights reserved.</p>
+          </div>
+
+          <div class="footer-sign__links">
+            <a href="#" target="_blank" rel="noopener">이용문의</a>
+
+            <div class="footer-sign__policies" aria-label="약관 링크">
+              <a class="footer-sign__policy" href="#" target="_blank" rel="noopener">이용약관</a>
+              <a class="footer-sign__policy footer-sign__policy--strong" href="#" target="_blank"
+                rel="noopener">개인정보처리방침</a>
+            </div>
+          </div>
+        </footer>
+      </main>
+      <!-- 6. 하단 교환하기/플로팅 버튼 -->
+      <!-- 교환 가능할때 -->
+      <div class="bottom-action">
+        <div class="bottom-action__inner">
+          <button type="button" class="btn-primary js-open-exchange">교환하기</button>
+        </div>
+      </div>
+      <!-- 교환 불가능 -->
+      <!-- <div class="bottom-action">
+ <button type="button" class="btn-primary btn-primary--disabled" disabled>교환하기</button>
+</div> -->
+    </div>
+  </div>
+
+  <!-- 약관 동의 팝업 (Modal) -->
+  <div class="modal" id="modalTerms">
+    <!-- Dimmer overlay with 30% black -->
+    <div class="modal__overlay js-close-modal"></div>
+    <div class="modal__dialog">
+      <div class="modal__header">
+        <p class="modal__title">개인정보 수집 이용동의</p>
+      </div>
+      <div class="modal__body">
+        <div class="modal-table">
+          <div class="modal-table__row">
+            <p class="modal-table__label">수집 및 이용목적</p>
+            <p class="modal-table__val">모바일 쿠폰 발송</p>
+          </div>
+          <div class="modal-table__row">
+            <p class="modal-table__label">수집 및 이용항목</p>
+            <p class="modal-table__val">휴대폰 번호</p>
+          </div>
+          <div class="modal-table__row">
+            <p class="modal-table__label">보유 및 이용기간</p>
+            <p class="modal-table__val">발송일로부터 2개월</p>
+          </div>
+        </div>
+        <p class="modal__desc">
+          상기 동의를 거부하실 권리가 있습니다.<br />
+          단, 미동의시에는 서비스 이용에 제한이 있습니다.
+        </p>
+      </div>
+      <div class="modal__footer">
+        <button type="button" class="btn-confirm js-close-modal">확인</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 휴대폰 번호 확인 팝업 -->
+  <div class="modal" id="modalExchange">
+    <div class="modal__overlay js-close-exchange"></div>
+
+    <div class="modal__dialog modal__dialog--exchange">
+      <div class="modal__header">
+        <p class="modal__title">쿠폰 교환</p>
+      </div>
+
+      <div class="modal__body">
+        <div class="modal-phone-box">
+          <p class="modal-phone-box__text" id="exchangePhoneText">010-1234-5678</p>
+        </div>
+
+        <p class="modal__desc modal__desc--exchange">
+          입력하신 휴대폰 번호를 확인해주세요.<br />
+          휴대폰 번호를 잘못 입력하여 모바일 쿠폰을 받지 못할 경우,
+          당사는 책임을 지지 않습니다.
+        </p>
+      </div>
+
+      <div class="modal__footer modal__footer--double">
+        <button type="button" class="btn-secondary js-close-exchange">취소</button>
+        <button type="button" class="btn-confirm">교환하기</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 교환불가 팝업-->
+  <!-- <div class="modal" id="modalExchange">
+  <div class="modal__overlay js-close-exchange"></div>
+
+  <div class="modal__dialog modal__dialog--exchange">
+    <div class="modal__header">
+      <p class="modal__title">쿠폰 교환 실패</p>
+    </div>
+
+    <div class="modal__body">
+
+      <p class="modal__desc modal__desc--exchange"> 보유한 포인트가 부족합니다.
+      </p>
+    </div>
+
+    <div class="modal__footer modal__footer--double">
+      <button type="button" class="btn-confirm">확인</button>
+    </div>
+    
+  </div>
+</div> -->
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      /* 약관 모달 */
+      const termsModal = document.getElementById("modalTerms");
+      const termsOpenBtn = document.querySelector(".js-open-terms");
+
+      if (termsOpenBtn && termsModal) {
+        termsOpenBtn.addEventListener("click", function () {
+          termsModal.classList.add("is-active");
+        });
+      }
+
+      document.querySelectorAll(".js-close-modal").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          if (termsModal) {
+            termsModal.classList.remove("is-active");
+          }
+        });
+      });
+
+      /* 교환 확인 모달 */
+      const exchangeModal = document.getElementById("modalExchange");
+      const exchangeOpenBtn = document.querySelector(".js-open-exchange");
+      const exchangePhoneText = document.getElementById("exchangePhoneText");
+      const phoneInput = document.querySelector(".input-text");
+
+      if (exchangeOpenBtn && exchangeModal) {
+        exchangeOpenBtn.addEventListener("click", function () {
+          if (exchangePhoneText && phoneInput) {
+            exchangePhoneText.textContent = phoneInput.value || "010-1234-5678";
+          }
+          exchangeModal.classList.add("is-active");
+        });
+      }
+
+      document.querySelectorAll(".js-close-exchange").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          if (exchangeModal) {
+            exchangeModal.classList.remove("is-active");
+          }
+        });
+      });
+
+      /* 하단 버튼 배경색 변경 */
+      const bottomAction = document.querySelector(".bottom-action");
+      const targetSection = document.querySelector(".detail-notice");
+      const scrollRoot = document.querySelector(".content--flex");
+
+      if (!bottomAction || !targetSection || !scrollRoot) return;
+
+      function updateBottomActionBg() {
+        const targetRect = targetSection.getBoundingClientRect();
+        const rootRect = scrollRoot.getBoundingClientRect();
+
+        /* 하단 고정 버튼 높이 영역쯤에서 감지 */
+        const triggerLine = rootRect.bottom - 88;
+
+        if (targetRect.top <= triggerLine) {
+          bottomAction.classList.add("is-slate");
+          bottomAction.classList.remove("is-white");
+        } else {
+          bottomAction.classList.add("is-white");
+          bottomAction.classList.remove("is-slate");
+        }
+      }
+
+      scrollRoot.addEventListener("scroll", updateBottomActionBg, { passive: true });
+      window.addEventListener("resize", updateBottomActionBg);
+
+      updateBottomActionBg();
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const content = document.getElementById('content');
+      const bottomAction = document.querySelector('.bottom-action');
+      const completeState = document.querySelector('.detail-state--complete');
+
+      // 교환 완료 화면이 활성(is-hidden 클래스 없음)이면 버튼 숨기고 하단 여백도 제거
+      if (bottomAction && completeState && !completeState.classList.contains('is-hidden')) {
+        bottomAction.style.display = 'none';
+        content.classList.add('content--no-bottom-action');
+      }
+    });
+
+  </script>
+</body>
+
+</html>
