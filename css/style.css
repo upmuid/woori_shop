@@ -234,19 +234,16 @@
     width: auto;
   max-width: 18rem;
   z-index: 50;
-  
 }
 
 /* 패널(말풍선 본체) */
 .tooltip-bubble__panel{
-  background: #2589F4;
+  background: #19162c;
   border-radius: 1rem;
   padding: 1rem;
-  width: max-content;
-  max-width: 18rem;
-  position: relative;
-  text-align: center;
-  
+  width: max-content;    /* 내용만큼 */
+  max-width: 18rem;      /* 상한 */
+  position: relative; /* ✅ arrow의 기준점 */
 }
 
 /* ✅ 꼬리(polygon): 패널 위쪽 중앙에 고정 */
@@ -274,10 +271,9 @@
 
 .tooltip-bubble__title{
   margin: 0;
-  padding-left: 1rem;
-  color: #fff;
+  color: var(--slate-50, #f8fafc);
   font-family: "Pretendard-Regular", sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   line-height: 1.25rem;
   letter-spacing: -0.02em;
   font-weight: 400;
@@ -307,9 +303,8 @@
 /* ✅ 리스트(불릿 점이 안보이는 문제 해결) */
 .tooltip-bubble__list{
  
-  padding-left: 1rem;   /* 불릿이 안쪽으로 들어오게 */
-  
-  color: #fff;
+  padding-left: 1rem;
+  color: var(--tooltip-bubble-list-color, var(--slate-400, #94a3b8));
   font-family: "Pretendard-Regular", sans-serif;
   font-size: 0.75rem;
   line-height: 1.25rem;
@@ -324,11 +319,25 @@
 
 
 
+.tooltip-bubble__list--default {
+  display: var(--tooltip-list-default-display, block);
+}
 
+.tooltip-bubble__list--wo {
+  display: var(--tooltip-list-wo-display, none);
+}
 
+.tooltip-bubble__panel {
+  background: var(--tooltip-bubble-bg, #181d27);
+}
 
+.tooltip-bubble__arrow--default {
+  display: var(--tooltip-arrow-default-display, block);
+}
 
-
+.tooltip-bubble__arrow--wo {
+  display: var(--tooltip-arrow-wo-display, none);
+}
 
 
 /* =========================================================
@@ -411,7 +420,7 @@
 
 /* Chip (포인트샵) */
 .plus-hero__chip{
-  background: #036635;
+  background: var(--c-point);
   border-radius: 0.5rem;
   padding: 8px 14px;
   display: inline-flex;
@@ -485,7 +494,7 @@
 
 .plus-card__plus,
 .plus-card__value{
-  color: #036635;
+  color: var(--c-point);
   font-size: 1.125rem;
   line-height: 1.3125rem;
   font-weight: 600;
@@ -615,12 +624,12 @@ transition: transform 220ms ease, opacity 180ms ease;
 
 .point-banner__strong{
   font-weight: 700;
-  color: var(--gray-800, #036635);
+  color: var(--c-point);
 }
 
 .point-banner__sub{
   opacity: 0.95;
-  color: var(--gray-900, #181d27);
+  color: #181d27;
 }
 
 /* X 버튼: pill 안쪽 오른쪽 */
@@ -637,11 +646,28 @@ transition: transform 220ms ease, opacity 180ms ease;
   flex: 0 0 auto;
 }
 
-.point-banner__close-icon{
+/* .point-banner__plus-icon{
+  display: inline-flex;
   width: 1rem;
   height: 1rem;
-  display: block;
-  max-width: none;
+  flex-shrink: 0;
+} */
+
+
+.point-banner__plus{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 50%;
+  background: var(--c-point);
+  color: #fff;
+  font-family: "PretendardVariable", "Pretendard", sans-serif;
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 600;
+  flex-shrink: 0;
 }
 
 /* =========================================================
@@ -746,14 +772,16 @@ transition: transform 220ms ease, opacity 180ms ease;
   height: 2.6225rem; /* 피그마 값 유지 느낌 */
 }
 
-
+/* =========================================================
+   Guide Banner (이용안내 이동)
+========================================================= */
 
 /* =========================================================
    Guide Banner (NEW)
 ========================================================= */
 .guide-banner{
   background: var(--slate-100, #f1f5f9);
-  padding: 0 1rem 1rem;
+  padding: 0 1rem;
 }
 
 /* 링크 자체가 카드 */
@@ -1018,6 +1046,39 @@ align-items: center; /* ✅ 여기 */
 /* =========================================================
    Footer Notice (알려드려요)
 ========================================================= */
+/* .footer-notice{
+  background: var(--slate-100, #f1f5f9);
+  padding: 0 1rem 1rem;      
+}
+
+.footer-notice__title{
+  margin: 0;
+  padding: 0 0 0.625rem;    
+  color: var(--gray-700, #414651);
+  font-family: "Pretendard-Bold", sans-serif;
+  font-size: 0.875rem;      
+  line-height: 1.25rem;     
+  font-weight: 700;
+}
+
+.footer-notice__list{
+  margin: 0;
+  padding-left: 1rem;        
+  color: var(--gray-500, #717680);
+  font-family: "Pretendard-Regular", sans-serif;
+  font-size: 0.75rem;        
+  line-height: 1.25rem;      
+  letter-spacing: -0.02em;
+  list-style: disc;         
+  padding-left: 1rem;       
+  margin: 0;
+}
+
+.footer-notice__list li{
+  margin: 0.25rem 0;        
+  list-style: disc;
+} */
+
 .footer-notice{
   background: var(--slate-100, #f1f5f9);
   padding: 0 1rem 1rem;      /* footer-sign 위에서 자연스럽게 이어지게 */
@@ -1062,6 +1123,14 @@ align-items: center; /* ✅ 여기 */
   margin: 0.25rem 0;         
   list-style: disc;
 }
+
+.footer-notice--default{
+  display: var(--footer-notice-default-display, block);
+}
+.footer-notice--wo{
+  display: var(--footer-notice-wo-display, none);
+}
+
 
 /* =========================================================
    Footer

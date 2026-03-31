@@ -1,0 +1,30 @@
+/* scss/theme-wo.scss */
+
+:root {
+  --c-point: #2589F4;
+  --c-point-bg-soft: #f1f5f9;
+
+    --members-guide-display: flex;
+  --point-empty-display: flex;
+
+  --members-guide-button-border: #2589F4;
+  --members-guide-button-bg: #ffffff;
+  --members-guide-button-color: #2589F4;
+
+  --point-empty-refresh-bg: #eff2f7;
+  --point-empty-refresh-color: #6c8ba9;
+
+  --footer-notice-default-display: none;
+  --footer-notice-wo-display: block;
+  
+
+  --tooltip-list-default-display: none;
+  --tooltip-list-wo-display: block;
+  --tooltip-bubble-bg: #2589F4;
+
+  --tooltip-arrow-default-display: none;
+  --tooltip-arrow-wo-display: block;
+
+  --tooltip-bubble-list-color: #ffffff;
+  
+}
