@@ -5,10 +5,10 @@
   <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
   <link rel="stylesheet" href="css/style-normal.css" type="text/css" />
   <link rel="stylesheet" href="css/style.css" type="text/css" />
-  <link rel="stylesheet" href="css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="css/theme-wo.css" type="text/css" />
   <title>쇼핑플러스</title>
 </head>
-<body class="media-wo">
+<body >
   <div id="index" class="index">
      <div class="wrap">
       <header class="header">
@@ -40,34 +40,42 @@
                   <div class="point-card__head">
                 <div class="point-card__title-row">  
                 <!-- 타이틀 월에는 0없음 2월/1월 -->
-                  <p class="point-card__title">적립 예정 꿀머니</p> 
+                  <p class="point-card__title">2월 전환 예정 포인트</p> 
 
                     <!-- ✅ 트리거 + 툴팁을 같이 묶는 래퍼 -->
                     <div class="point-card__help-wrap">
                         <button type="button" class="point-card__help" aria-label="포인트 전환 안내" aria-expanded="false" aria-controls="tooltip-points"data-tooltip-trigger>
-                        <img class="point-card__help-icon" src="imgs/help-wo.svg" alt="" />
+                        <img class="point-card__help-icon" src="imgs/circle-help.svg" alt="" />
                         </button>  
 
-                        <!-- ✅ 툴팁(기본 숨김) : 버튼 밖으로 뺌 -->
-                         <!-- circle-help.svg클릭시 오픈-->
-                         <div class="tooltip-bubble" id="tooltip-points" role="dialog" aria-label="전환 예정 포인트 안내" hidden>
-                         <img class="tooltip-bubble__arrow" src="imgs/Polygon-wo.svg" alt="" aria-hidden="true" />
+                         <div class="tooltip-bubble tooltip-bubble--default" id="tooltip-points" role="dialog" aria-label="전환 예정 포인트 안내" hidden>
+                         <img class="tooltip-bubble__arrow tooltip-bubble__arrow--default" src="imgs/Polygon.svg" alt="" aria-hidden="true" />
+                        <img class="tooltip-bubble__arrow tooltip-bubble__arrow--wo" src="imgs/Polygon-wo.svg" alt="" aria-hidden="true" />
 
                         <div class="tooltip-bubble__panel">
                             <div class="tooltip-bubble__head">
-                            <p class="tooltip-bubble__title">꿀머니는 구매 다음 달<br/> 말일에 적립돼요.<br/>(휴일이면 다음 영업일 지급)</p>
+                            <p class="tooltip-bubble__title">전환 예정 포인트 안내</p>
 
                             <button type="button" class="tooltip-bubble__close" aria-label="닫기" data-tooltip-close> 
-                                <!-- x아이콘 클릭시 닫힘 and 바깥영역 클릭시 닫힘 -->
                                 <img class="tooltip-bubble__close-icon" src="imgs/xicon-w.svg" alt="" />
                             </button>
                             </div>
-                            <ul class="tooltip-bubble__list">
-
+                            <ul class="tooltip-bubble__list tooltip-bubble__list--default">
+                            <li>구매 혹은 구매확정일 기준 다음 달 말일 일괄 전환됩니다.</li>
+                            <li>적립 내역은 구매 혹은 구매 확정 후 1시간 이내 반영됩니다.</li>
+                            <li>쇼핑몰 정책 변경 혹은 기타 사유로 실제</br> 적립 내역이 다를 수 있습니다.</li>
                             </ul>
+
+      <!-- 우리투자증권 버전 -->
+      <ul class="tooltip-bubble__list tooltip-bubble__list--wo">
+        <li>꿀머니는 구매하신 달의 익익월(다음 다음달) 1일에 적립됩니다. 만약 적립일이 휴일인 경우, 돌아오는 첫 영업일에 지급됩니다.</li>
+        <li>적립 내역은 구매 혹은 구매 확정 후 1시간 이내 반영됩니다.</li>
+        <li>쇼핑몰 정책 변경 혹은 기타 사유로 실제<br />적립 내역이 다를 수 있습니다.</li>
+      </ul>
                         </div>
                         </div>
                     </div>
+
                 </div>
 
 
@@ -82,7 +90,7 @@
                 <!-- 본문: 코인 + 금액 / 내역 버튼 -->
              <div class="point-card__body">
                 <div class="point-card__amount">
-                    <img class="point-card__coin" src="imgs/wooriib.svg" alt="" /> 
+                    <img class="point-card__coin" src="imgs/coin3.png" alt="" /> 
                     <!-- 포인트 변경 최대 99,999,999-->
                      <p class="point-card__value">99,999,999</p>
                 </div>
@@ -92,32 +100,101 @@
                 </a>
                 </div>
 
-
+                <!-- 하단: 다음 달 예정 -->
+                <div class="point-card__foot">
+                <div class="point-card__next"> 
+                     <p class="point-card__next-label">3월 전환 예정 포인트</p>
+                    <div class="point-card__next-amount">
+                    <p class="point-card__plus">+</p>
+                    <p class="point-card__next-value">10,000</p>
+                    </div>
+                </div>
+                </div>
             </div>
          </section> 
 
+        <!-- index-plus.html -->
+        <!-- 쇼핑플러스 플러스콘ver 포인트 기본은 숨김 -->
+        <!-- <section class="plus-summary" aria-label="쇼핑플러스 포인트 요약">
+        <div class="plus-hero">
+            <div class="plus-hero__left"> 
+             
+              <div class="plus-hero__text">
+                <p class="plus-hero__label">보유 중인 포인트</p>
+                <a href="pluspoint-history.html" class="plus-hero__value-btn" aria-label="보유 포인트 상세 열기">  
+                  <p class="plus-hero__value">99,999,999</p>
+                <img class="plus-hero__chevron" src="imgs/chevron-light-b.svg" alt="" />
+                </a>
+            </div>
+            </div>
+            
+            <a class="plus-hero__chip" href="#" aria-label="포인트샵으로 이동">
+            <p class="plus-hero__chip-text">플러스콘</p>
+            </a>
+        </div>
+            <div class="plus-card">
+            <div class="plus-card__row">
+                <div class="plus-card__title">
+                <p class="plus-card__title-text">2월 적립 예정 포인트</p>
+                <div class="plus-card__help-wrap">
+                <button type="button" class="plus-card__help" aria-label="적립 예정 포인트 안내" aria-expanded="false" aria-controls="tooltip-plus" data-tooltip-trigger>
+                    <img class="plus-card__help-icon" src="imgs/circle-help.svg" alt="" />
+                </button>
+                <div class="tooltip-bubble" id="tooltip-plus" role="dialog" aria-label="적립 예정 포인트 안내" hidden>
+                    <img class="tooltip-bubble__arrow" src="imgs/Polygon.svg" alt="" aria-hidden="true" />
+
+                    <div class="tooltip-bubble__panel">
+                    <div class="tooltip-bubble__head">
+                        <p class="tooltip-bubble__title">적립 예정 포인트 안내</p>
+                        <button type="button" class="tooltip-bubble__close" aria-label="닫기" data-tooltip-close>
+                        <img class="tooltip-bubble__close-icon" src="imgs/xicon-w.svg" alt="" />
+                        </button>
+                    </div>
+                    <ul class="tooltip-bubble__list">
+                        <li>구매 혹은 구매확정일 기준 다음 달 말일 일괄 전환됩니다.</li>
+                        <li>적립 내역은 구매 혹은 구매 확정 후 1시간 이내 반영됩니다.</li>
+                        <li>쇼핑몰 정책 변경 혹은 기타 사유로 실제<br />적립 내역이 다를 수 있습니다.</li>
+                    </ul>
+                    </div>
+                </div>
+                </div>
+                </div>
+
+                <div class="plus-card__amount">
+                <p class="plus-card__plus">+</p>
+                <p class="plus-card__value">4,522</p>
+                </div>
+            </div>
+            <div class="plus-card__next">
+                <p class="plus-card__next-label">3월 적립 예정 포인트</p>
+                <div class="plus-card__next-amount">
+                <p class="plus-card__next-plus">+</p>
+                <p class="plus-card__next-value">10,000</p>
+                </div>
+            </div>
+            </div>  
+        </section> -->
 
 
-
-
-        <!-- 포인트 반영 내역 알림 -->
-        <!-- <section class="point-banner" aria-label="포인트 적립 알림 배너">
+        <section class="point-banner" aria-label="포인트 적립 알림 배너">
         <div class="point-banner__box"> 
+
              <a class="point-banner__hit" href="point-history.html" aria-label="포인트 내역으로 이동"></a>
 
             <div class="point-banner__content" aria-hidden="true">
-            <img class="point-banner__close-icon" src="imgs/+icon_2.png" alt="" />
 
+            <span class="point-banner__plus" aria-hidden="true">+</span>
             <p class="point-banner__text">
                 <strong class="point-banner__strong">500 포인트</strong>
-                <span class="point-banner__sub">(02.02 17:48 쿠팡 구매 내역 반영)</span>
+                <span class="point-banner__sub">(02.02 17:48 쿠팡 구매 내역 반영02.02 17:48 쿠팡 구매 내역 반영)</span>
             </p>
             </div>
+
             <button type="button" class="point-banner__close" data-banner-close aria-label="배너 닫기">
             <img class="point-banner__close-icon" src="imgs/xicon-bb.svg" alt="" />
             </button>
         </div>
-        </section> -->
+        </section>
         <!--
         - point-banner__close 클릭 시 point-banner를 display:none 처리
         - point-banner__close 클릭은 링크 이동을 막아야 함
@@ -206,8 +283,8 @@
                 </span>
 
                 <p class="guide-banner__text">
-                <span class="guide-banner__mid">쇼핑플러스 경유적립 이용 방법</span>
-                <span class="guide-banner__bold"></span>
+                <span class="guide-banner__mid">쇼핑적립</span>
+                <span class="guide-banner__bold">이용방법</span>
                 <span class="guide-banner__bold">한눈에 보기</span>
                 </p>
             </div>
@@ -218,55 +295,136 @@
         </section>
 
 
-
+        <!-- 프로모션 배너 -->
+        <section class="banner-carousel" aria-label="프로모션 배너"> 
+            <ul class="banner-carousel__track"> 
+                <li class="banner-carousel__slide is-active"> 
+                <a class="banner-carousel__link" href="#" aria-label="배너 1"> 
+                <img class="banner-carousel__img" src="imgs/Promotionbanner.png" alt="" /> 
+                </a> 
+                </li> 
+                <li class="banner-carousel__slide"> 
+                <a class="banner-carousel__link" href="#" aria-label="배너 2"> 
+                <img class="banner-carousel__img" src="imgs/Promotionbanner2.png" alt="" /> 
+                </a> 
+                </li> 
+                <li class="banner-carousel__slide"> <a class="banner-carousel__link" href="#" aria-label="배너 3"> 
+                <img class="banner-carousel__img" src="imgs/Promotionbanner3.png" alt="" />
+                </a> 
+                </li> 
+                <li class="banner-carousel__slide"> 
+                <a class="banner-carousel__link" href="#" aria-label="배너 4"> 
+                <img class="banner-carousel__img" src="imgs/Promotionbanner4.png" alt="" /> 
+                </a> 
+                </li> 
+                <li class="banner-carousel__slide"> 
+                <a class="banner-carousel__link" href="#" aria-label="배너 5"> 
+                <img class="banner-carousel__img" src="imgs/Promotionbanner5.png" alt="" /> 
+                </a> 
+                </li> 
+                <ol class="banner-carousel__dots" aria-label="배너 인디케이터"> 
+                <li class="banner-carousel__dot is-active" aria-current="true">
+                </li> 
+                <li class="banner-carousel__dot">
+                </li> 
+                <li class="banner-carousel__dot">
+                </li> 
+                <li class="banner-carousel__dot">
+                </li> 
+                <li class="banner-carousel__dot">
+                </li> 
+                </ol> 
+            </ul> 
+        </section>
 
         <!-- 인포 -->
-        <section class="footer-notice" aria-label="이용 안내">
+        <!-- <section class="footer-notice" aria-label="이용 안내">
+            <h2 class="footer-notice__title">알려드려요</h2>
+            <ul class="footer-notice__list">
+                <li>쇼핑몰 정책과 프로모션에 따라 적립율 및 적립 시점은 수시로 변경될 수 있습니다.</li>
+                <li>적립 금액은 쿠폰, 포인트, 배송비, 할인 혜택, 부가세를 제외한 결제 금액을 기준으로 계산됩니다.</li>
+                <li>쇼핑몰 정책에 따라 일 최대 적립금 제한이 있을 수 있습니다.</li>
+                <li>상품 구매 취소 시 포인트가 지급되지 않거나 회수될 수 있습니다. 취소가 반복될 경우 재참여가 제한될 수 있습니다.</li>
+                <li>다른 제휴사에서 ‘쇼핑하러 가기’를 경유한 경우에는 포인트 적립 대상에서 제외됩니다.</li>
+                <li>해당 프로모션은 쇼핑몰 광고의 중개이며 쇼핑몰에서 판매하는 상품 또는 적립 여부에 책임이 없습니다.</li>
+                <li>광고 차단 어플리케이션 또는 서버 우회 등의 방법을 이용하여 접속 시 제외될 수 있습니다.</li>
+                <li>아이폰(iOS)의 경우 APP 추적을 허용으로 설정하셔야 적립이 가능합니다.(아이폰 – 설정 – 네이버페이 &amp; 사파리 - 추적허용)</li>
+            </ul>
+        </section> -->
+            <section class="footer-notice footer-notice--default" aria-label="이용 안내">
             <h2 class="footer-notice__title">서비스 유의사항</h2>
-  <p class="footer-notice__lead">서비스 이용 및 문의 안내</p>
-  <p class="footer-notice__list">
-    · 본 서비스는 제휴사 ㈜핀크럭스와의 제휴를 통해 제공됩니다. 서비스 이용 중 발생하는 시스템 오류, 적립 누락 등 모든 문의사항은 핀크럭스 고객센터를 이용해 주시기 바랍니다. (&gt;핀크럭스 문의하기)
-    <br />
-    · 이 서비스는 우리투자증권 일반종합계좌를 보유한 개인 고객을 대상으로 하며, 제휴 혜택에 대한 리워드로 포인트를 적립해 드리는 서비스입니다.
-    <br />
-    · 우리투자증권은 제휴 쇼핑몰에서 판매하는 상품의 품질, 배송, 교환/환불 등에 대해 직접적인 책임을 지지 않으며, 상품 관련 문의는 해당 판매처를 이용해 주시기 바랍니다.
-  </p>
-    <p class="footer-notice__lead">적립 기준 및 유의사항</p>
-    <p class="footer-notice__list">
-        · 적립 기준: 적립률, 적립 제외 상품, 적립 시점 등은 각 제휴 쇼핑몰의 정책과 프로모션에 따라 수시로 변경될 수 있으므로, 이용 전 각 쇼핑몰의 상세 안내를 확인해 주시기 바랍니다.<br/>
-        · 산정 방식: 적립 금액은 쿠폰, 포인트 사용액, 배송비, 할인 금액, 부가세를 제외한 실제 결제 금액을 기준으로 계산됩니다.<br/>
-        · 누락 접수: 구매/구매확정 후 1시간 이내에 적립 예정 꿀머니가 조회되지 않거나, 적립 제외 항목이 아님에도 누락된 경우 [구매 영수증, 구매 일시, 구매 상품명]을 첨부하여 핀크럭스 고객센터로 문의해 주시기 바랍니다.<br/>
-        · 기술적 유의사항: 사이트 내 ‘추적 허용’ 금지, ‘쿠키’ 수집 미동의, ‘광고 차단 프로그램’ 설치 및 아이폰(iOS) ‘콘텐츠 차단’ 기능이 활성화된 경우 적립 대상에서 누락될 수 있습니다. 반드시 해당 설정을 확인 및 해제 후 이용하시기 바랍니다.<br/>
-    </p>
-    <p class="footer-notice__lead">취소 및 포인트 회수 정책</p>
-    <p class="footer-notice__list">
-        · 경유 조건: 우리WON뱅킹 유니버설뱅킹 및 우리WON MTS를 통해 제휴 쇼핑몰로 이동하여 구매한 내역만 합산 적립되며, 다른 사이트나 앱을 경유하여 구매한 경우는 적립 대상에서 제외됩니다.<br/>
-        · 취소 규정:<br/>
-        · 제휴 쇼핑몰에서 구매 후 취소하거나, 포인트 적립 전 서비스를 탈퇴할 경우 지급 예정 포인트는 회수됩니다.<br/>
-        · 부분 취소 유의: 주문 상품 중 일부를 취소하는 경우에도 해당 주문 건에 대한 포인트는 전액 회수됩니다. 잦은 취소가 반복될 경우 서비스 재참여가 제한될 수 있습니다.<br/>
-        · 한도: 1일 최대 적립 한도 제한은 없으나, 추후 내부 정책에 따라 변경될 수 있습니다.
-    </p>
-    <p class="footer-notice__lead">지급 시기 및 내역 관리</p>
-    <p class="footer-notice__list">
-        · 지급 시기: 꿀머니는 구매하신 달의 익익월 1일에 적립됩니다. 만약 적립일이 휴일인 경우, 돌아오는 첫 영업일에 지급 됩니다. <br/>
-        · 내역 보관: 적립 내역은 최근 3개월간 제공됩니다. 제휴 서비스 탈퇴 시 적립 내역은 즉시 파기되어 복구가 불가능합니다.
-    </p>
-    <p class="footer-notice__lead">꿀머니(포인트) 안내</p>
-    <p class="footer-notice__list">
-        · 꿀머니란? 우리금융그룹 통합 멤버십 포인트로 1꿀=1원의 가치를 가지며, 1꿀 이상부터 계좌 입금 등으로 현금처럼 사용 가능합니다.<br/>
-        · 필수 조건: 꿀머니 적립을 위해서는 ‘우리WON멤버스’ 가입이 필수이며, 원활한 적립을 위해 위수탁 업체(우리카드)에 고객 정보(휴대폰 번호)가 제공됩니다. (>가입하기)<br/>
-        · 정보 확인: : 고객 정보(연락처) 불일치 시 지급이 제한될 수 있으니 최신 정보로 유지해 주시기 바랍니다. (>정보변경)<br/>
-        · 부정 적립: 부정한 방법(어뷰징 등)으로 포인트를 취득하거나 적립 원인이 취소된 경우, 사전 통보 없이 회수될 수 있습니다. 해당 행위 적발 시 서비스 이용 제한 및 법적 조치가 취해질 수 있습니다.<br/>
-        · 기타: 금융감독 당국의 권고, 금융사고, 기타 소비자 보호 사유 발생 시 적립 한도가 축소될 수 있습니다.
-    </p>
-    <p class="footer-notice__lead">[투자 유의사항]</p>
-    <p class="footer-notice__list">
-    · 투자자는 금융투자상품에 대하여 우리투자증권으로부터 충분한 설명을 받을 권리가 있으며, 투자 전 상품설명서 및 약관을 반드시 읽어보시기 바랍니다.<br/>
-    · 이 금융투자상품은 예금자보호법에 따라 보호되지 않습니다.<br/>
-    · 금융투자상품은 자산 가격 및 환율 변동, 신용등급 하락 등에 따라 투자 원금의 초과 손실이 발생할 수 있으며, 그 손실은 투자자에게 귀속됩니다.<br/>
-    · 국내 주식 거래 시 수수료는 0.015%(KRX), 0.0145%(NXT) 등이며, 기타 자세한 사항은 홈페이지 등을 참고하시기 바랍니다.
-    </p>
-        </section>
+            <p class="footer-notice__list">
+            · 쇼핑몰 정책과 프로모션에 따라 적립율 및 적립 시점은 수시로 변경될 수 있습니다. <br/>
+            · 적립 금액은 쿠폰, 포인트, 배송비, 할인 혜택, 부가세를 제외한 결제 금액을 기준으로 계산됩니다.<br/>
+            · 쇼핑몰 정책에 따라 일 최대 적립금 제한이 있을 수 있습니다.<br/>
+            · 상품 구매 취소 시 포인트가 지급되지 않거나 회수될 수 있습니다. 취소가 반복될 경우 재참여가 제한될 수 있습니다.<br/>
+            · 다른 제휴사에서 ‘쇼핑하러 가기’를 경유한 경우에는 포인트 적립 대상에서 제외됩니다.<br/>
+            · 해당 프로모션은 쇼핑몰 광고의 중개이며 쇼핑몰에서 판매하는 상품 또는 적립 여부에 책임이 없습니다.<br/>
+            · 광고 차단 어플리케이션 또는 서버 우회 등의 방법을 이용하여 접속 시 제외될 수 있습니다.<br/>
+            · 아이폰(iOS)의 경우 APP 추적을 허용으로 설정하셔야 적립이 가능합니다.(아이폰 – 설정 – 네이버페이 &amp; 사파리 - 추적허용)
+            </p>
+            </section>
+            <!-- 플러스콘 버전 유의사항-->
+            <!-- <section class="footer-notice" aria-label="이용 안내">
+            <h2 class="footer-notice__title">서비스 유의사항</h2>
+            <p class="footer-notice__list">
+            · 적립된 포인트의 유효기간은 적립일로부터 1년이며, 적립 내역 또한 1년간 안전하게 보관됩니다.<br/>
+            · 내역의 날짜는 구매 또는 주문일 기준입니다.<br/>
+            · 구매 이후 이용 내역에 반영까지 다소 시간이 소요 될 수 있습니다. <br/>
+            · 구매후 취소/반품/환불하거나 쿠팡의 정책이 변경되면 적립이 취소되거나 적립 포인트가 변경될 수 있습니다.<br/>
+            · 적립한도, 적립율, 적립 시기, 적립 제외 상품 등은 수시로 변경될 수 있으니 각 쇼핑몰 상세 내용을 확인해주세요. <br/>
+            · 적립이 정상적으로 이루어지지 않는 경우 상단 문의하기를 통해 알려주세요.
+            </p>
+            </section> -->
+
+<!-- 우리투자증권 유의사항 -->
+<section class="footer-notice footer-notice--wo" aria-label="이용 안내">
+<h2 class="footer-notice__title">서비스 유의사항</h2>
+<p class="footer-notice__lead">서비스 이용 및 문의 안내</p>
+<p class="footer-notice__list">
+· 본 서비스는 제휴사 ㈜핀크럭스와의 제휴를 통해 제공됩니다. 서비스 이용 중 발생하는 시스템 오류, 적립 누락 등 모든 문의사항은 핀크럭스 고객센터를 이용해 주시기 바랍니다. (&gt;핀크럭스 문의하기)
+<br />
+· 이 서비스는 우리투자증권 일반종합계좌를 보유한 개인 고객을 대상으로 하며, 제휴 혜택에 대한 리워드로 포인트를 적립해 드리는 서비스입니다.
+<br />
+· 우리투자증권은 제휴 쇼핑몰에서 판매하는 상품의 품질, 배송, 교환/환불 등에 대해 직접적인 책임을 지지 않으며, 상품 관련 문의는 해당 판매처를 이용해 주시기 바랍니다.
+</p>
+<p class="footer-notice__lead">적립 기준 및 유의사항</p>
+<p class="footer-notice__list">
+· 적립 기준: 적립률, 적립 제외 상품, 적립 시점 등은 각 제휴 쇼핑몰의 정책과 프로모션에 따라 수시로 변경될 수 있으므로, 이용 전 각 쇼핑몰의 상세 안내를 확인해 주시기 바랍니다.<br/>
+· 산정 방식: 적립 금액은 쿠폰, 포인트 사용액, 배송비, 할인 금액, 부가세를 제외한 실제 결제 금액을 기준으로 계산됩니다.<br/>
+· 누락 접수: 구매/구매확정 후 1시간 이내에 적립 예정 꿀머니가 조회되지 않거나, 적립 제외 항목이 아님에도 누락된 경우 [구매 영수증, 구매 일시, 구매 상품명]을 첨부하여 핀크럭스 고객센터로 문의해 주시기 바랍니다.<br/>
+· 기술적 유의사항: 사이트 내 ‘추적 허용’ 금지, ‘쿠키’ 수집 미동의, ‘광고 차단 프로그램’ 설치 및 아이폰(iOS) ‘콘텐츠 차단’ 기능이 활성화된 경우 적립 대상에서 누락될 수 있습니다. 반드시 해당 설정을 확인 및 해제 후 이용하시기 바랍니다.<br/>
+</p>
+<p class="footer-notice__lead">취소 및 포인트 회수 정책</p>
+<p class="footer-notice__list">
+· 경유 조건: 우리WON뱅킹 유니버설뱅킹 및 우리WON MTS를 통해 제휴 쇼핑몰로 이동하여 구매한 내역만 합산 적립되며, 다른 사이트나 앱을 경유하여 구매한 경우는 적립 대상에서 제외됩니다.<br/>
+· 취소 규정:<br/>
+· 제휴 쇼핑몰에서 구매 후 취소하거나, 포인트 적립 전 서비스를 탈퇴할 경우 지급 예정 포인트는 회수됩니다.<br/>
+· 부분 취소 유의: 주문 상품 중 일부를 취소하는 경우에도 해당 주문 건에 대한 포인트는 전액 회수됩니다. 잦은 취소가 반복될 경우 서비스 재참여가 제한될 수 있습니다.<br/>
+· 한도: 1일 최대 적립 한도 제한은 없으나, 추후 내부 정책에 따라 변경될 수 있습니다.
+</p>
+<p class="footer-notice__lead">지급 시기 및 내역 관리</p>
+<p class="footer-notice__list">
+· 지급 시기: 꿀머니는 구매하신 달의 익익월 1일에 적립됩니다. 만약 적립일이 휴일인 경우, 돌아오는 첫 영업일에 지급 됩니다. <br/>
+· 내역 보관: 적립 내역은 최근 3개월간 제공됩니다. 제휴 서비스 탈퇴 시 적립 내역은 즉시 파기되어 복구가 불가능합니다.
+</p>
+<p class="footer-notice__lead">꿀머니(포인트) 안내</p>
+<p class="footer-notice__list">
+· 꿀머니란? 우리금융그룹 통합 멤버십 포인트로 1꿀=1원의 가치를 가지며, 1꿀 이상부터 계좌 입금 등으로 현금처럼 사용 가능합니다.<br/>
+· 필수 조건: 꿀머니 적립을 위해서는 ‘우리WON멤버스’ 가입이 필수이며, 원활한 적립을 위해 위수탁 업체(우리카드)에 고객 정보(휴대폰 번호)가 제공됩니다. (>가입하기)<br/>
+· 정보 확인: : 고객 정보(연락처) 불일치 시 지급이 제한될 수 있으니 최신 정보로 유지해 주시기 바랍니다. (>정보변경)<br/>
+· 부정 적립: 부정한 방법(어뷰징 등)으로 포인트를 취득하거나 적립 원인이 취소된 경우, 사전 통보 없이 회수될 수 있습니다. 해당 행위 적발 시 서비스 이용 제한 및 법적 조치가 취해질 수 있습니다.<br/>
+· 기타: 금융감독 당국의 권고, 금융사고, 기타 소비자 보호 사유 발생 시 적립 한도가 축소될 수 있습니다.
+</p>
+<p class="footer-notice__lead">[투자 유의사항]</p>
+<p class="footer-notice__list">
+· 투자자는 금융투자상품에 대하여 우리투자증권으로부터 충분한 설명을 받을 권리가 있으며, 투자 전 상품설명서 및 약관을 반드시 읽어보시기 바랍니다.<br/>
+· 이 금융투자상품은 예금자보호법에 따라 보호되지 않습니다.<br/>
+· 금융투자상품은 자산 가격 및 환율 변동, 신용등급 하락 등에 따라 투자 원금의 초과 손실이 발생할 수 있으며, 그 손실은 투자자에게 귀속됩니다.<br/>
+· 국내 주식 거래 시 수수료는 0.015%(KRX), 0.0145%(NXT) 등이며, 기타 자세한 사항은 홈페이지 등을 참고하시기 바랍니다.
+</p>
+</section>
+
         <!-- 풋터 쇼핑플러스 버전 -->
         <footer class="footer-sign">
         <div class="footer-sign__row">
